@@ -1,102 +1,34 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\",
+  "WorkspaceRootPath": "D:\\C#\\MainMenu\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|d:\\nguyenphuocgiabin_2123110115\\mainmenu\\mainmenu\\finish.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|solutionrelative:mainmenu\\finish.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|d:\\c#\\mainmenu\\mainmenu\\dinoevolution.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|solutionrelative:mainmenu\\dinoevolution.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|d:\\nguyenphuocgiabin_2123110115\\mainmenu\\mainmenu\\finish.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|solutionrelative:mainmenu\\finish.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|d:\\c#\\mainmenu\\mainmenu\\dinoevolution.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|solutionrelative:mainmenu\\dinoevolution.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|d:\\nguyenphuocgiabin_2123110115\\mainmenu\\mainmenu\\finish.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|solutionrelative:mainmenu\\finish.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|d:\\c#\\mainmenu\\mainmenu\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|solutionrelative:mainmenu\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|d:\\nguyenphuocgiabin_2123110115\\mainmenu\\mainmenu\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|solutionrelative:mainmenu\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|d:\\c#\\mainmenu\\mainmenu\\animationhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|solutionrelative:mainmenu\\animationhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|d:\\nguyenphuocgiabin_2123110115\\mainmenu\\mainmenu\\login.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|solutionrelative:mainmenu\\login.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|d:\\c#\\mainmenu\\mainmenu\\dinoevolution.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|solutionrelative:mainmenu\\dinoevolution.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|d:\\nguyenphuocgiabin_2123110115\\mainmenu\\mainmenu\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|solutionrelative:mainmenu\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|d:\\nguyenphuocgiabin_2123110115\\mainmenu\\mainmenu\\question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|solutionrelative:mainmenu\\question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|d:\\nguyenphuocgiabin_2123110115\\mainmenu\\mainmenu\\question.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|solutionrelative:mainmenu\\question.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|d:\\nguyenphuocgiabin_2123110115\\mainmenu\\mainmenu\\question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|solutionrelative:mainmenu\\question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|d:\\nguyenphuocgiabin_2123110115\\mainmenu\\mainmenu\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|solutionrelative:mainmenu\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|d:\\nguyenphuocgiabin_2123110115\\mainmenu\\mainmenu\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|d:\\c#\\mainmenu\\mainmenu\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|solutionrelative:mainmenu\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|d:\\nguyenphuocgiabin_2123110115\\mainmenu\\mainmenu\\chickengame.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|solutionrelative:mainmenu\\chickengame.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|d:\\nguyenphuocgiabin_2123110115\\mainmenu\\mainmenu\\chickengame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|solutionrelative:mainmenu\\chickengame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\mainmenu\\chickengame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|solutionrelative:mainmenu\\chickengame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|d:\\nguyenphuocgiabin_2123110115\\mainmenu\\mainmenu\\catchegg.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|solutionrelative:mainmenu\\catchegg.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|d:\\nguyenphuocgiabin_2123110115\\mainmenu\\mainmenu\\catchegg.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|solutionrelative:mainmenu\\catchegg.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\mainmenu\\catchegg.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|solutionrelative:mainmenu\\catchegg.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|d:\\nguyenphuocgiabin_2123110115\\mainmenu\\mainmenu\\eggdrop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|solutionrelative:mainmenu\\eggdrop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|d:\\nguyenphuocgiabin_2123110115\\mainmenu\\mainmenu\\eggdrop.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|solutionrelative:mainmenu\\eggdrop.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\mainmenu\\eggdrop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|solutionrelative:mainmenu\\eggdrop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|d:\\nguyenphuocgiabin_2123110115\\mainmenu\\mainmenu\\gameball.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|solutionrelative:mainmenu\\gameball.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|d:\\nguyenphuocgiabin_2123110115\\mainmenu\\mainmenu\\gameball.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|solutionrelative:mainmenu\\gameball.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\mainmenu\\gameball.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|solutionrelative:mainmenu\\gameball.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|d:\\nguyenphuocgiabin_2123110115\\mainmenu\\mainmenu\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|solutionrelative:mainmenu\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|d:\\c#\\mainmenu\\mainmenu\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|solutionrelative:mainmenu\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -110,53 +42,30 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Finish.cs",
-              "DocumentMoniker": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\Finish.cs",
-              "RelativeDocumentMoniker": "MainMenu\\Finish.cs",
-              "ToolTip": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\Finish.cs",
-              "RelativeToolTip": "MainMenu\\Finish.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAFAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "D:\\C#\\MainMenu\\MainMenu\\Form1.cs",
+              "RelativeDocumentMoniker": "MainMenu\\Form1.cs",
+              "ToolTip": "D:\\C#\\MainMenu\\MainMenu\\Form1.cs",
+              "RelativeToolTip": "MainMenu\\Form1.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAowC0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-28T09:13:51.926Z",
+              "WhenOpened": "2025-12-05T07:52:57.318Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Finish.Designer.cs",
-              "DocumentMoniker": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\Finish.Designer.cs",
-              "RelativeDocumentMoniker": "MainMenu\\Finish.Designer.cs",
-              "ToolTip": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\Finish.Designer.cs",
-              "RelativeToolTip": "MainMenu\\Finish.Designer.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAADwv0gAAAAAAAAAAAAAAA==",
+              "Title": "DinoEvolution.cs",
+              "DocumentMoniker": "D:\\C#\\MainMenu\\MainMenu\\DinoEvolution.cs",
+              "RelativeDocumentMoniker": "MainMenu\\DinoEvolution.cs",
+              "ToolTip": "D:\\C#\\MainMenu\\MainMenu\\DinoEvolution.cs",
+              "RelativeToolTip": "MainMenu\\DinoEvolution.cs",
+              "ViewState": "AgIAAIIBAAAAAAAAAAAAwIUBAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-28T09:13:50.564Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Finish.cs [Design]",
-              "DocumentMoniker": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\Finish.cs",
-              "RelativeDocumentMoniker": "MainMenu\\Finish.cs",
-              "ToolTip": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\Finish.cs [Design]",
-              "RelativeToolTip": "MainMenu\\Finish.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-28T09:13:50.881Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Login.Designer.cs",
-              "DocumentMoniker": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\Login.Designer.cs",
-              "RelativeDocumentMoniker": "MainMenu\\Login.Designer.cs",
-              "ToolTip": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\Login.Designer.cs",
-              "RelativeToolTip": "MainMenu\\Login.Designer.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAkwDQAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-28T09:13:34.273Z",
+              "WhenOpened": "2025-12-05T08:00:52.113Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
@@ -165,246 +74,65 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Login.cs",
-              "DocumentMoniker": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\Login.cs",
-              "RelativeDocumentMoniker": "MainMenu\\Login.cs",
-              "ToolTip": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\Login.cs",
-              "RelativeToolTip": "MainMenu\\Login.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAYAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "DinoEvolution.Designer.cs",
+              "DocumentMoniker": "D:\\C#\\MainMenu\\MainMenu\\DinoEvolution.Designer.cs",
+              "RelativeDocumentMoniker": "MainMenu\\DinoEvolution.Designer.cs",
+              "ToolTip": "D:\\C#\\MainMenu\\MainMenu\\DinoEvolution.Designer.cs",
+              "RelativeToolTip": "MainMenu\\DinoEvolution.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-28T09:13:26.144Z",
+              "WhenOpened": "2025-12-05T08:00:57.795Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "D:\\C#\\MainMenu\\MainMenu\\Form1.cs",
+              "RelativeDocumentMoniker": "MainMenu\\Form1.cs",
+              "ToolTip": "D:\\C#\\MainMenu\\MainMenu\\Form1.cs [Design]",
+              "RelativeToolTip": "MainMenu\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T07:52:52.29Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AnimationHelper.cs",
+              "DocumentMoniker": "D:\\C#\\MainMenu\\MainMenu\\AnimationHelper.cs",
+              "RelativeDocumentMoniker": "MainMenu\\AnimationHelper.cs",
+              "ToolTip": "D:\\C#\\MainMenu\\MainMenu\\AnimationHelper.cs",
+              "RelativeToolTip": "MainMenu\\AnimationHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T08:04:34.546Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DinoEvolution.cs [Design]",
+              "DocumentMoniker": "D:\\C#\\MainMenu\\MainMenu\\DinoEvolution.cs",
+              "RelativeDocumentMoniker": "MainMenu\\DinoEvolution.cs",
+              "ToolTip": "D:\\C#\\MainMenu\\MainMenu\\DinoEvolution.cs [Design]",
+              "RelativeToolTip": "MainMenu\\DinoEvolution.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T08:31:52.517Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Login.cs [Design]",
-              "DocumentMoniker": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\Login.cs",
-              "RelativeDocumentMoniker": "MainMenu\\Login.cs",
-              "ToolTip": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\Login.cs [Design]",
-              "RelativeToolTip": "MainMenu\\Login.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-28T09:13:25.029Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Question.Designer.cs",
-              "DocumentMoniker": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\Question.Designer.cs",
-              "RelativeDocumentMoniker": "MainMenu\\Question.Designer.cs",
-              "ToolTip": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\Question.Designer.cs",
-              "RelativeToolTip": "MainMenu\\Question.Designer.cs",
-              "ViewState": "AgIAADgAAAAAAAAAAAAkwFwAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-28T09:12:20.443Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Question.cs",
-              "DocumentMoniker": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\Question.cs",
-              "RelativeDocumentMoniker": "MainMenu\\Question.cs",
-              "ToolTip": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\Question.cs",
-              "RelativeToolTip": "MainMenu\\Question.cs",
-              "ViewState": "AgIAAFwAAAAAAAAAAAA6wGEAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-28T09:12:10.957Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Question.cs [Design]",
-              "DocumentMoniker": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\Question.cs",
-              "RelativeDocumentMoniker": "MainMenu\\Question.cs",
-              "ToolTip": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\Question.cs [Design]",
-              "RelativeToolTip": "MainMenu\\Question.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-28T09:12:08.099Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ChickenGame.Designer.cs",
-              "DocumentMoniker": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\ChickenGame.Designer.cs",
-              "RelativeDocumentMoniker": "MainMenu\\ChickenGame.Designer.cs",
-              "ToolTip": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\ChickenGame.Designer.cs",
-              "RelativeToolTip": "MainMenu\\ChickenGame.Designer.cs",
-              "ViewState": "AgIAAEwAAAAAAAAAAAAkwFoAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-28T08:56:55.082Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "ChickenGame.cs",
-              "DocumentMoniker": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\ChickenGame.cs",
-              "RelativeDocumentMoniker": "MainMenu\\ChickenGame.cs",
-              "ToolTip": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\ChickenGame.cs",
-              "RelativeToolTip": "MainMenu\\ChickenGame.cs",
-              "ViewState": "AgIAAHAAAAAAAAAAAAAkwIoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-28T08:56:48.843Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "ChickenGame.cs [Design]",
-              "DocumentMoniker": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\ChickenGame.cs",
-              "RelativeDocumentMoniker": "MainMenu\\ChickenGame.cs",
-              "ToolTip": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\ChickenGame.cs [Design]",
-              "RelativeToolTip": "MainMenu\\ChickenGame.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-28T08:56:47.667Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "CatchEgg.cs [Design]",
-              "DocumentMoniker": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\CatchEgg.cs",
-              "RelativeDocumentMoniker": "MainMenu\\CatchEgg.cs",
-              "ToolTip": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\CatchEgg.cs [Design]",
-              "RelativeToolTip": "MainMenu\\CatchEgg.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-28T08:51:52.388Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "CatchEgg.Designer.cs",
-              "DocumentMoniker": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\CatchEgg.Designer.cs",
-              "RelativeDocumentMoniker": "MainMenu\\CatchEgg.Designer.cs",
-              "ToolTip": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\CatchEgg.Designer.cs",
-              "RelativeToolTip": "MainMenu\\CatchEgg.Designer.cs",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAowF4AAAA5AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-28T08:51:25.402Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "CatchEgg.cs",
-              "DocumentMoniker": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\CatchEgg.cs",
-              "RelativeDocumentMoniker": "MainMenu\\CatchEgg.cs",
-              "ToolTip": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\CatchEgg.cs",
-              "RelativeToolTip": "MainMenu\\CatchEgg.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAAAIwGYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-28T08:51:15.138Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "EggDrop.Designer.cs",
-              "DocumentMoniker": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\EggDrop.Designer.cs",
-              "RelativeDocumentMoniker": "MainMenu\\EggDrop.Designer.cs",
-              "ToolTip": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\EggDrop.Designer.cs",
-              "RelativeToolTip": "MainMenu\\EggDrop.Designer.cs",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAIwGYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-28T07:56:44.354Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "EggDrop.cs",
-              "DocumentMoniker": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\EggDrop.cs",
-              "RelativeDocumentMoniker": "MainMenu\\EggDrop.cs",
-              "ToolTip": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\EggDrop.cs",
-              "RelativeToolTip": "MainMenu\\EggDrop.cs",
-              "ViewState": "AgIAAD4AAAAAAAAAAAAowGQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-28T07:56:42.455Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "EggDrop.cs [Design]",
-              "DocumentMoniker": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\EggDrop.cs",
-              "RelativeDocumentMoniker": "MainMenu\\EggDrop.cs",
-              "ToolTip": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\EggDrop.cs [Design]",
-              "RelativeToolTip": "MainMenu\\EggDrop.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-28T07:56:41.033Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\Program.cs",
-              "RelativeDocumentMoniker": "MainMenu\\Program.cs",
-              "ToolTip": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\Program.cs",
-              "RelativeToolTip": "MainMenu\\Program.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-28T07:54:00.928Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "GameBall.cs [Design]",
-              "DocumentMoniker": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\GameBall.cs",
-              "RelativeDocumentMoniker": "MainMenu\\GameBall.cs",
-              "ToolTip": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\GameBall.cs [Design]",
-              "RelativeToolTip": "MainMenu\\GameBall.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-28T07:51:20.922Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "GameBall.Designer.cs",
-              "DocumentMoniker": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\GameBall.Designer.cs",
-              "RelativeDocumentMoniker": "MainMenu\\GameBall.Designer.cs",
-              "ToolTip": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\GameBall.Designer.cs",
-              "RelativeToolTip": "MainMenu\\GameBall.Designer.cs",
-              "ViewState": "AgIAADsAAAAAAAAAAAAIwEIAAABAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-28T07:50:58.025Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "GameBall.cs",
-              "DocumentMoniker": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\GameBall.cs",
-              "RelativeDocumentMoniker": "MainMenu\\GameBall.cs",
-              "ToolTip": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\GameBall.cs",
-              "RelativeToolTip": "MainMenu\\GameBall.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAIwC4AAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-28T07:50:46.044Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\Form1.cs",
-              "RelativeDocumentMoniker": "MainMenu\\Form1.cs",
-              "ToolTip": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\Form1.cs",
-              "RelativeToolTip": "MainMenu\\Form1.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAkwBwAAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-28T07:48:14.799Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
               "Title": "Form1.Designer.cs",
-              "DocumentMoniker": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\Form1.Designer.cs",
+              "DocumentMoniker": "D:\\C#\\MainMenu\\MainMenu\\Form1.Designer.cs",
               "RelativeDocumentMoniker": "MainMenu\\Form1.Designer.cs",
-              "ToolTip": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\Form1.Designer.cs",
+              "ToolTip": "D:\\C#\\MainMenu\\MainMenu\\Form1.Designer.cs",
               "RelativeToolTip": "MainMenu\\Form1.Designer.cs",
-              "ViewState": "AgIAAEYAAAAAAAAAAAAkwFYAAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAACUAAAAAAAAAAAAYwC8AAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-28T07:27:40.468Z",
+              "WhenOpened": "2025-12-05T07:52:54.399Z",
               "EditorCaption": ""
             }
           ]

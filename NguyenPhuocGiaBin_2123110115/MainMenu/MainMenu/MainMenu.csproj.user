@@ -7,6 +7,9 @@
     <Compile Update="ChickenGame.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="DinoEvolution.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="EggDrop.cs">
       <SubType>Form</SubType>
     </Compile>

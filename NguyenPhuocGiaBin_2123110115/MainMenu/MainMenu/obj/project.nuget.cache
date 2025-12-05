@@ -1,10 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "R0yKVCdHPN4=",
+  "dgSpecHash": "Ckqb4uyOtoY=",
   "success": true,
-  "projectFilePath": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\MainMenu.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.net.sdk.compilers.toolset\\9.0.306\\microsoft.net.sdk.compilers.toolset.9.0.306.nupkg.sha512"
-  ],
+  "projectFilePath": "D:\\C#\\MainMenu\\MainMenu\\MainMenu.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }
