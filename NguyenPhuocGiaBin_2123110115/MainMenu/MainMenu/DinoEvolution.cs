@@ -8,46 +8,60 @@ namespace MainMenu
 {
     public partial class DinoEvolution : Form
     {
-        // ==========================
-        // PLAYER STATE
-        // ==========================
         bool isPtero = false;
         bool isJumping = false;
-        bool isDucking = false;
 
-        // ==========================
+        bool moveLeft = false;
+        bool moveRight = false;
+        bool moveUp = false;
+        bool moveDown = false;
+
+        int moveSpeed = 12;
+
         // PHYSICS
-        // ==========================
         int gravity = 2;
         int jumpSpeed = -26;
         int verticalSpeed = 0;
 
+        // TRIPLE JUMP
         int jumpCount = 0;
-        const int maxJump = 2;
+        const int maxJump = 3;
 
-        // ==========================
-        // OBSTACLES
-        // ==========================
+        // LIVES
+        int lives = 3;
+
+        // INVINCIBILITY
+        bool invincible = false;
+        DateTime invincibleUntil;
+
         Random rand = new();
         int obstacleSpeed = 10;
         int score = 0;
 
         List<PictureBox> obstacles = new();
 
-        // ==========================
-        // BOSS SYSTEM
-        // ==========================
+        // BOSS
         PictureBox boss;
         bool bossActive = false;
         DateTime lastBossSpawn = DateTime.Now;
         DateTime bossDespawnTime;
+        bool bossHasFiredOnce = false;
+
+        // LASER SYSTEM
+        PictureBox laser;
+        bool laserActive = false;
+        int laserPhase = 0;
+        int laserVx = 0;
+        int sweepDirection = 0;       // 1 = down, -1 = up
+        int sweepDistance = 0;        // random 80–150
+        int sweepMoved = 0;
 
         List<(PictureBox bullet, int vx, int vy)> bullets = new();
+        List<(PictureBox missile, int vx, int vy)> missiles = new();
 
         public DinoEvolution()
         {
             InitializeComponent();
-
             WindowState = FormWindowState.Maximized;
             FormBorderStyle = FormBorderStyle.None;
         }
@@ -55,38 +69,36 @@ namespace MainMenu
         private void DinoEvolution_Load(object sender, EventArgs e)
         {
             player.Top = ground.Top - player.Height - 5;
-            player.Left = this.Width / 10;
+            player.Left = Width / 10;
 
             CreateObstacles();
             gameTimer.Start();
         }
 
-        // ==========================
+        // =====================================================================
         // CREATE OBSTACLES
-        // ==========================
+        // =====================================================================
         private void CreateObstacles()
         {
-            foreach (var obs in obstacles)
-                Controls.Remove(obs);
+            foreach (var o in obstacles)
+                Controls.Remove(o);
 
             obstacles.Clear();
 
             if (!isPtero)
             {
-                int count = rand.Next(1, 6);
-                int startX = this.Width + 200;
+                int count = rand.Next(20, 40);
+                int startX = Width + 200;
 
                 for (int i = 0; i < count; i++)
                 {
                     PictureBox obs = new();
                     obs.BackColor = Color.Brown;
-
-                    int size = rand.Next(1, Math.Min(4, score / 5 + 2));
-                    obs.Width = 40 * size;
+                    obs.Width = 40 * rand.Next(1, 4);
                     obs.Height = 50;
 
                     obs.Top = ground.Top - obs.Height;
-                    obs.Left = startX + i * rand.Next(250, 450);
+                    obs.Left = startX + i * rand.Next(60, 140);
 
                     Controls.Add(obs);
                     obstacles.Add(obs);
@@ -94,51 +106,78 @@ namespace MainMenu
             }
             else
             {
-                int count = rand.Next(10, 21);
-                int startX = this.Width + 200;
+                int count = rand.Next(40, 70);
+                int startX = Width + 150;
 
                 for (int i = 0; i < count; i++)
                 {
                     PictureBox obs = new();
                     obs.BackColor = Color.MediumPurple;
                     obs.Size = new Size(40, 40);
-                    obs.Top = rand.Next(80, ground.Top - 200);
-                    obs.Left = startX + i * rand.Next(80, 160);
+
+                    obs.Top = rand.Next(hudPanel.Bottom + 20, ground.Top - 120);
+                    obs.Left = startX + i * rand.Next(40, 90);
 
                     Controls.Add(obs);
                     obstacles.Add(obs);
                 }
             }
+
+            int missileCount = rand.Next(6, 10);
+            for (int i = 0; i < missileCount; i++)
+                SpawnHomingMissile();
         }
 
-        // ==========================
+        // =====================================================================
         // GAME LOOP
-        // ==========================
+        // =====================================================================
         private void gameTimer_Tick(object sender, EventArgs e)
         {
-            obstacleSpeed = 10 + score;
-
-            lblScore.Text = $"Điểm: {score}";
-            lblSpeed.Text = $"Tốc độ: {obstacleSpeed}";
             lblMode.Text = isPtero ? "Chế độ: Pterosaur" : "Chế độ: T-Rex";
+            lblSpeed.Text = "Tốc độ: " + obstacleSpeed;
+            lblScore.Text = $"Điểm: {score} | Mạng: {lives}";
+
+            obstacleSpeed = 10 + (score / 10);
+
+            if (invincible && DateTime.Now >= invincibleUntil)
+            {
+                invincible = false;
+                player.BackColor = isPtero ? Color.OrangeRed : Color.LimeGreen;
+            }
 
             UpdatePlayer();
             UpdateObstacles();
+            UpdateMissiles();
 
             MaybeSpawnBoss();
             UpdateBoss();
             UpdateBullets();
 
+            if (laserActive)
+                UpdateLaser();
+
             CheckCollision();
         }
 
-        // ==========================
-        // PLAYER
-        // ==========================
+        // =====================================================================
+        // PLAYER MOVEMENT
+        // =====================================================================
         private void UpdatePlayer()
         {
+            if (moveLeft) player.Left -= moveSpeed;
+            if (moveRight) player.Left += moveSpeed;
+
+            player.Left = Math.Max(0, Math.Min(Width - player.Width, player.Left));
+
             if (!isPtero)
             {
+                if (moveUp && jumpCount < maxJump && !isJumping)
+                {
+                    isJumping = true;
+                    verticalSpeed = jumpSpeed;
+                    jumpCount++;
+                }
+
                 if (isJumping)
                 {
                     player.Top += verticalSpeed;
@@ -152,51 +191,106 @@ namespace MainMenu
                         player.Top = ground.Top - player.Height - 5;
                     }
                 }
+
+                player.Height = moveDown ? 50 : 80;
             }
             else
             {
-                player.Top += verticalSpeed;
-                if (player.Top < 60) player.Top = 60;
-                if (player.Bottom > ground.Top - 50)
-                    player.Top = ground.Top - 50 - player.Height;
+                if (moveUp) player.Top -= moveSpeed;
+                if (moveDown) player.Top += moveSpeed;
+
+                if (player.Bottom > ground.Top - 40)
+                    player.Top = ground.Top - 40 - player.Height;
             }
+
+            if (player.Top < hudPanel.Bottom + 10)
+                player.Top = hudPanel.Bottom + 10;
         }
 
-        // ==========================
-        // OBSTACLES
-        // ==========================
+        // =====================================================================
+        // OBSTACLES UPDATE
+        // =====================================================================
         private void UpdateObstacles()
         {
             for (int i = obstacles.Count - 1; i >= 0; i--)
             {
-                var obs = obstacles[i];
+                PictureBox obs = obstacles[i];
                 obs.Left -= obstacleSpeed;
 
                 if (obs.Right < 0)
                 {
                     Controls.Remove(obs);
                     obstacles.RemoveAt(i);
+                    score++;
                 }
             }
 
             if (obstacles.Count == 0)
-            {
-                score++;
-                obstacleSpeed++;
                 CreateObstacles();
+        }
+
+        // =====================================================================
+        // HOMING MISSILE
+        // =====================================================================
+        private void SpawnHomingMissile()
+        {
+            PictureBox m = new();
+            m.BackColor = Color.Red;
+            m.Size = new Size(22, 22);
+
+            m.Left = Width + rand.Next(50, 100);
+            m.Top = rand.Next(hudPanel.Bottom + 20, ground.Top - 120);
+
+            Controls.Add(m);
+            m.BringToFront();
+
+            int tx = player.Left + player.Width / 2;
+            int ty = player.Top + player.Height / 2;
+
+            double dx = tx - m.Left;
+            double dy = ty - m.Top;
+            double d = Math.Sqrt(dx * dx + dy * dy);
+
+            int speed = 16;
+            int vx = (int)(speed * dx / d);
+            int vy = (int)(speed * dy / d);
+
+            missiles.Add((m, vx, vy));
+        }
+
+        private void UpdateMissiles()
+        {
+            for (int i = missiles.Count - 1; i >= 0; i--)
+            {
+                var (m, vx, vy) = missiles[i];
+
+                m.Left += vx;
+                m.Top += vy;
+
+                if (!invincible && player.Bounds.IntersectsWith(m.Bounds))
+                {
+                    LoseLife();
+                    return;
+                }
+
+                if (m.Left < -80 || m.Left > Width + 80 ||
+                    m.Top < -80 || m.Top > Height + 80)
+                {
+                    Controls.Remove(m);
+                    missiles.RemoveAt(i);
+                }
             }
         }
 
-        // ==========================
-        // BOSS SPAWN
-        // ==========================
+        // =====================================================================
+        // BOSS SYSTEM
+        // =====================================================================
         private void MaybeSpawnBoss()
         {
-            if (bossActive) return;
-
-            if ((DateTime.Now - lastBossSpawn).TotalSeconds >= 15)
+            if (!bossActive && (DateTime.Now - lastBossSpawn).TotalSeconds >= 15)
             {
                 lastBossSpawn = DateTime.Now;
+                bossHasFiredOnce = false;
                 SpawnBoss();
             }
         }
@@ -207,39 +301,25 @@ namespace MainMenu
             boss.BackColor = Color.DarkRed;
             boss.Size = new Size(220, 140);
 
-            boss.Top = rand.Next(100, ground.Top - 300);
-            boss.Left = this.Width - 300; // spawn trong màn hình
+            boss.Top = rand.Next(hudPanel.Bottom + 50, ground.Top - 300);
+            boss.Left = Width - 300;
 
             Controls.Add(boss);
-            boss.BringToFront();
-
             bossActive = true;
+
             bossDespawnTime = DateTime.Now.AddSeconds(30);
 
-            // bắn ngay khi xuất hiện
-            SpawnBulletCone(rand.Next(10, 21));
+            SpawnBulletCone(rand.Next(20, 40));
+            bossHasFiredOnce = true;
 
             _ = BossFireLoop();
         }
 
-        private async Task BossFireLoop()
-        {
-            while (bossActive && boss != null)
-            {
-                await Task.Delay(5000);
-                if (bossActive && boss != null)
-                    SpawnBulletCone(rand.Next(10, 21));
-            }
-        }
-
-        // ==========================
-        // BOSS UPDATE
-        // ==========================
         private void UpdateBoss()
         {
             if (!bossActive || boss == null) return;
 
-            boss.Left -= 2; // chậm lại → đủ thời gian bắn
+            boss.Left -= 2;
 
             if (DateTime.Now >= bossDespawnTime)
             {
@@ -249,32 +329,98 @@ namespace MainMenu
             }
         }
 
-        // ==========================
-        // BULLETS
-        // ==========================
+        private async Task BossFireLoop()
+        {
+            while (bossActive && boss != null)
+            {
+                await Task.Delay(3000);
+
+                if (bossHasFiredOnce && !laserActive)
+                    ActivateLaser();
+
+                SpawnBulletCone(rand.Next(20, 40));
+            }
+        }
+
+        // =====================================================================
+        // LASER SYSTEM
+        // =====================================================================
+        private void ActivateLaser()
+        {
+            laser = new PictureBox();
+            laser.BackColor = Color.Cyan;
+            laser.Height = 40;
+            laser.Width = Width; // bắn dài hết màn hình
+
+            laser.Top = boss.Top + boss.Height / 2 - laser.Height / 2;
+
+            bool shootDown = rand.Next(0, 2) == 0;
+            sweepDirection = shootDown ? 1 : -1;
+
+            sweepDistance = rand.Next(80, 150);
+            sweepMoved = 0;
+
+            laser.Left = 0;
+
+            Controls.Add(laser);
+            laser.BringToFront();
+
+            laserPhase = 0;
+            laserActive = true;
+        }
+
+        private void UpdateLaser()
+        {
+            if (laser == null) return;
+
+            // Phase 0 – đứng yên 1 tí trước khi quét
+            if (laserPhase == 0)
+            {
+                laserPhase = 1;
+            }
+            else
+            {
+                // Phase 1 – Quét lên hoặc xuống
+                int move = 4 * sweepDirection;
+                laser.Top += move;
+                sweepMoved += Math.Abs(move);
+
+                if (sweepMoved >= sweepDistance)
+                {
+                    Controls.Remove(laser);
+                    laser = null;
+                    laserActive = false;
+                }
+            }
+
+            if (!invincible && player.Bounds.IntersectsWith(laser.Bounds))
+                LoseLife();
+        }
+
+        // =====================================================================
+        // BOSS BULLETS
+        // =====================================================================
         private void SpawnBulletCone(int count)
         {
             if (boss == null) return;
 
             for (int i = 0; i < count; i++)
             {
-                int angle = rand.Next(-60, 61);
+                int angle = rand.Next(-80, 81);
                 double rad = angle * Math.PI / 180;
 
                 int vx = (int)(12 * Math.Cos(rad));
                 int vy = (int)(12 * Math.Sin(rad));
 
-                PictureBox bullet = new();
-                bullet.BackColor = Color.Yellow;
-                bullet.Size = new Size(15, 15);
+                PictureBox b = new();
+                b.BackColor = Color.Yellow;
+                b.Size = new Size(15, 15);
 
-                bullet.Left = boss.Left;
-                bullet.Top = boss.Top + boss.Height / 2;
+                b.Left = boss.Left;
+                b.Top = boss.Top + boss.Height / 2;
 
-                Controls.Add(bullet);
-                bullet.BringToFront();
-
-                bullets.Add((bullet, vx, vy));
+                Controls.Add(b);
+                bullets.Add((b, vx, vy));
             }
         }
 
@@ -287,14 +433,14 @@ namespace MainMenu
                 b.Left -= vx;
                 b.Top += vy;
 
-                if (player.Bounds.IntersectsWith(b.Bounds))
+                if (!invincible && player.Bounds.IntersectsWith(b.Bounds))
                 {
-                    GameOver();
+                    LoseLife();
                     return;
                 }
 
-                if (b.Right < 0 || b.Left > this.Width ||
-                    b.Bottom < 0 || b.Top > this.Height)
+                if (b.Right < 0 || b.Left > Width ||
+                    b.Bottom < 0 || b.Top > Height)
                 {
                     Controls.Remove(b);
                     bullets.RemoveAt(i);
@@ -302,75 +448,88 @@ namespace MainMenu
             }
         }
 
-        // ==========================
+        // =====================================================================
         // COLLISION
-        // ==========================
+        // =====================================================================
         private void CheckCollision()
         {
             foreach (var obs in obstacles)
-                if (player.Bounds.IntersectsWith(obs.Bounds))
-                    GameOver();
+                if (!invincible && player.Bounds.IntersectsWith(obs.Bounds))
+                {
+                    LoseLife();
+                    return;
+                }
 
-            if (boss != null &&
-                player.Bounds.IntersectsWith(boss.Bounds))
+            if (!invincible && boss != null && player.Bounds.IntersectsWith(boss.Bounds))
+            {
+                LoseLife();
+                return;
+            }
+        }
+
+        // =====================================================================
+        // LIFE SYSTEM
+        // =====================================================================
+        private async void LoseLife()
+        {
+            if (invincible) return;
+
+            lives--;
+
+            if (lives <= 0)
+            {
                 GameOver();
+                return;
+            }
+
+            invincible = true;
+            invincibleUntil = DateTime.Now.AddSeconds(1.5);
+
+            await FlashInvincible();
+        }
+
+        private async Task FlashInvincible()
+        {
+            for (int i = 0; i < 8; i++)
+            {
+                player.Visible = !player.Visible;
+                await Task.Delay(120);
+            }
+            player.Visible = true;
         }
 
         private void GameOver()
         {
             gameTimer.Stop();
-            MessageBox.Show($"Game Over!\nĐiểm: {score}");
-            this.Close();
+            MessageBox.Show($"Bạn đã thua!\nĐiểm: {score}");
+            Close();
         }
 
-        // ==========================
-        // INPUT HANDLERS
-        // ==========================
+        // =====================================================================
+        // INPUT
+        // =====================================================================
         private void DinoEvolution_KeyDown(object sender, KeyEventArgs e)
         {
-            if (!isPtero)
-            {
-                if (e.KeyCode == Keys.Space && jumpCount < maxJump)
-                {
-                    isJumping = true;
-                    verticalSpeed = jumpSpeed;
-                    jumpCount++;
-                }
+            if (e.KeyCode == Keys.A || e.KeyCode == Keys.Left) moveLeft = true;
+            if (e.KeyCode == Keys.D || e.KeyCode == Keys.Right) moveRight = true;
+            if (e.KeyCode == Keys.W || e.KeyCode == Keys.Up) moveUp = true;
+            if (e.KeyCode == Keys.S || e.KeyCode == Keys.Down) moveDown = true;
 
-                if (e.KeyCode == Keys.Down)
-                {
-                    isDucking = true;
-                    player.Height = 50;
-                }
-            }
-            else
-            {
-                if (e.KeyCode == Keys.Up) verticalSpeed = -14;
-                if (e.KeyCode == Keys.Down) verticalSpeed = 14;
-            }
-
-            if (e.KeyCode == Keys.Z)
+            if (e.KeyCode == Keys.Enter)
                 TransformMode();
 
             if (e.KeyCode == Keys.Escape)
-                this.Close();
+                Close();
         }
 
         private void DinoEvolution_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Down)
-            {
-                isDucking = false;
-                player.Height = isPtero ? 60 : 80;
-            }
-
-            if (isPtero)
-                verticalSpeed = 0;
+            if (e.KeyCode == Keys.A || e.KeyCode == Keys.Left) moveLeft = false;
+            if (e.KeyCode == Keys.D || e.KeyCode == Keys.Right) moveRight = false;
+            if (e.KeyCode == Keys.W || e.KeyCode == Keys.Up) moveUp = false;
+            if (e.KeyCode == Keys.S || e.KeyCode == Keys.Down) moveDown = false;
         }
 
-        // ==========================
-        // TRANSFORM MODE
-        // ==========================
         private async void TransformMode()
         {
             await AnimationHelper.TransformAnimation(player, () =>
@@ -381,13 +540,11 @@ namespace MainMenu
                 {
                     player.BackColor = Color.OrangeRed;
                     player.Size = new Size(110, 60);
-                    player.Top = ground.Top - 250;
                 }
                 else
                 {
                     player.BackColor = Color.LimeGreen;
                     player.Size = new Size(80, 80);
-                    player.Top = ground.Top - 85;
                     jumpCount = 0;
                 }
             });

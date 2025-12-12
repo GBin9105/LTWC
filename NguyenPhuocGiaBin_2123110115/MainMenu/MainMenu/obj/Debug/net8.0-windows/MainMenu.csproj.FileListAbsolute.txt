@@ -45,3 +45,4 @@ D:\C#\MainMenu\MainMenu\obj\Debug\net8.0-windows\MainMenu.pdb
 D:\C#\MainMenu\MainMenu\obj\Debug\net8.0-windows\MainMenu.genruntimeconfig.cache
 D:\C#\MainMenu\MainMenu\obj\Debug\net8.0-windows\ref\MainMenu.dll
 D:\C#\MainMenu\MainMenu\obj\Debug\net8.0-windows\MainMenu.DinoEvolution.resources
+D:\NguyenPhuocGiaBin_2123110115\MainMenu\MainMenu\obj\Debug\net8.0-windows\MainMenu.DinoEvolution.resources

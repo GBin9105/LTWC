@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\C#\\MainMenu\\MainMenu\\MainMenu.csproj": {}
+    "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\MainMenu.csproj": {}
   },
   "projects": {
-    "D:\\C#\\MainMenu\\MainMenu\\MainMenu.csproj": {
+    "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\MainMenu.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\C#\\MainMenu\\MainMenu\\MainMenu.csproj",
+        "projectUniqueName": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\MainMenu.csproj",
         "projectName": "MainMenu",
-        "projectPath": "D:\\C#\\MainMenu\\MainMenu\\MainMenu.csproj",
+        "projectPath": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\MainMenu.csproj",
         "packagesPath": "C:\\Users\\BIN COMPUTER\\.nuget\\packages\\",
-        "outputPath": "D:\\C#\\MainMenu\\MainMenu\\obj\\",
+        "outputPath": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\BIN COMPUTER\\AppData\\Roaming\\NuGet\\NuGet.Config",
