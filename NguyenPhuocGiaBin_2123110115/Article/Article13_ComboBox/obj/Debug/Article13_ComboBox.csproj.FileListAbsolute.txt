@@ -1,0 +1,10 @@
+C:\Users\BIN COMPUTER\source\repos\Article\Article13_ComboBox\bin\Debug\Article13_ComboBox.exe.config
+C:\Users\BIN COMPUTER\source\repos\Article\Article13_ComboBox\bin\Debug\Article13_ComboBox.exe
+C:\Users\BIN COMPUTER\source\repos\Article\Article13_ComboBox\bin\Debug\Article13_ComboBox.pdb
+C:\Users\BIN COMPUTER\source\repos\Article\Article13_ComboBox\obj\Debug\Article13_ComboBox.csproj.AssemblyReference.cache
+C:\Users\BIN COMPUTER\source\repos\Article\Article13_ComboBox\obj\Debug\Article13_ComboBox.Form1.resources
+C:\Users\BIN COMPUTER\source\repos\Article\Article13_ComboBox\obj\Debug\Article13_ComboBox.Properties.Resources.resources
+C:\Users\BIN COMPUTER\source\repos\Article\Article13_ComboBox\obj\Debug\Article13_ComboBox.csproj.GenerateResource.cache
+C:\Users\BIN COMPUTER\source\repos\Article\Article13_ComboBox\obj\Debug\Article13_ComboBox.csproj.CoreCompileInputs.cache
+C:\Users\BIN COMPUTER\source\repos\Article\Article13_ComboBox\obj\Debug\Article13_ComboBox.exe
+C:\Users\BIN COMPUTER\source\repos\Article\Article13_ComboBox\obj\Debug\Article13_ComboBox.pdb

@@ -1,0 +1,242 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\BIN COMPUTER\\source\\repos\\Article\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{268D6579-4387-4F10-A6BC-F810DBCE0A93}|Article14\\Article14.csproj|c:\\users\\bin computer\\source\\repos\\article\\article14\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{268D6579-4387-4F10-A6BC-F810DBCE0A93}|Article14\\Article14.csproj|solutionrelative:article14\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{268D6579-4387-4F10-A6BC-F810DBCE0A93}|Article14\\Article14.csproj|c:\\users\\bin computer\\source\\repos\\article\\article14\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{268D6579-4387-4F10-A6BC-F810DBCE0A93}|Article14\\Article14.csproj|solutionrelative:article14\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{268D6579-4387-4F10-A6BC-F810DBCE0A93}|Article14\\Article14.csproj|c:\\users\\bin computer\\source\\repos\\article\\article14\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{268D6579-4387-4F10-A6BC-F810DBCE0A93}|Article14\\Article14.csproj|solutionrelative:article14\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{268D6579-4387-4F10-A6BC-F810DBCE0A93}|Article14\\Article14.csproj|c:\\users\\bin computer\\source\\repos\\article\\article14\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{268D6579-4387-4F10-A6BC-F810DBCE0A93}|Article14\\Article14.csproj|solutionrelative:article14\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEE6BC9D-8AA0-435D-8DC7-9B93B4973A11}|Article13_ComboBox\\Article13_ComboBox.csproj|c:\\users\\bin computer\\source\\repos\\article\\article13_combobox\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEE6BC9D-8AA0-435D-8DC7-9B93B4973A11}|Article13_ComboBox\\Article13_ComboBox.csproj|solutionrelative:article13_combobox\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEE6BC9D-8AA0-435D-8DC7-9B93B4973A11}|Article13_ComboBox\\Article13_ComboBox.csproj|c:\\users\\bin computer\\source\\repos\\article\\article13_combobox\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEE6BC9D-8AA0-435D-8DC7-9B93B4973A11}|Article13_ComboBox\\Article13_ComboBox.csproj|solutionrelative:article13_combobox\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEE6BC9D-8AA0-435D-8DC7-9B93B4973A11}|Article13_ComboBox\\Article13_ComboBox.csproj|c:\\users\\bin computer\\source\\repos\\article\\article13_combobox\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CEE6BC9D-8AA0-435D-8DC7-9B93B4973A11}|Article13_ComboBox\\Article13_ComboBox.csproj|solutionrelative:article13_combobox\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEE6BC9D-8AA0-435D-8DC7-9B93B4973A11}|Article13_ComboBox\\Article13_ComboBox.csproj|c:\\users\\bin computer\\source\\repos\\article\\article13_combobox\\faculty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEE6BC9D-8AA0-435D-8DC7-9B93B4973A11}|Article13_ComboBox\\Article13_ComboBox.csproj|solutionrelative:article13_combobox\\faculty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEE6BC9D-8AA0-435D-8DC7-9B93B4973A11}|Article13_ComboBox\\Article13_ComboBox.csproj|c:\\users\\bin computer\\source\\repos\\article\\article13_combobox\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEE6BC9D-8AA0-435D-8DC7-9B93B4973A11}|Article13_ComboBox\\Article13_ComboBox.csproj|solutionrelative:article13_combobox\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B0F6CDE-0D3D-4E52-9E4A-77284FD29E14}|Article12\\Article12.csproj|c:\\users\\bin computer\\source\\repos\\article\\article12\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B0F6CDE-0D3D-4E52-9E4A-77284FD29E14}|Article12\\Article12.csproj|solutionrelative:article12\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B0F6CDE-0D3D-4E52-9E4A-77284FD29E14}|Article12\\Article12.csproj|c:\\users\\bin computer\\source\\repos\\article\\article12\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B0F6CDE-0D3D-4E52-9E4A-77284FD29E14}|Article12\\Article12.csproj|solutionrelative:article12\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B0F6CDE-0D3D-4E52-9E4A-77284FD29E14}|Article12\\Article12.csproj|c:\\users\\bin computer\\source\\repos\\article\\article12\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{0B0F6CDE-0D3D-4E52-9E4A-77284FD29E14}|Article12\\Article12.csproj|solutionrelative:article12\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B0F6CDE-0D3D-4E52-9E4A-77284FD29E14}|Article12\\Article12.csproj|c:\\users\\bin computer\\source\\repos\\article\\article12\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B0F6CDE-0D3D-4E52-9E4A-77284FD29E14}|Article12\\Article12.csproj|solutionrelative:article12\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\BIN COMPUTER\\source\\repos\\Article\\Article14\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "Article14\\Form1.Designer.cs",
+              "ToolTip": "C:\\Users\\BIN COMPUTER\\source\\repos\\Article\\Article14\\Form1.Designer.cs",
+              "RelativeToolTip": "Article14\\Form1.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T04:18:30.661Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\BIN COMPUTER\\source\\repos\\Article\\Article14\\Form1.cs",
+              "RelativeDocumentMoniker": "Article14\\Form1.cs",
+              "ToolTip": "C:\\Users\\BIN COMPUTER\\source\\repos\\Article\\Article14\\Form1.cs",
+              "RelativeToolTip": "Article14\\Form1.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAmwCcAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T04:18:24.683Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\BIN COMPUTER\\source\\repos\\Article\\Article14\\Program.cs",
+              "RelativeDocumentMoniker": "Article14\\Program.cs",
+              "ToolTip": "C:\\Users\\BIN COMPUTER\\source\\repos\\Article\\Article14\\Program.cs",
+              "RelativeToolTip": "Article14\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T04:18:11.556Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\BIN COMPUTER\\source\\repos\\Article\\Article14\\Form1.cs",
+              "RelativeDocumentMoniker": "Article14\\Form1.cs",
+              "ToolTip": "C:\\Users\\BIN COMPUTER\\source\\repos\\Article\\Article14\\Form1.cs [Design]",
+              "RelativeToolTip": "Article14\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T04:18:04.927Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\BIN COMPUTER\\source\\repos\\Article\\Article13_ComboBox\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "Article13_ComboBox\\Form1.Designer.cs",
+              "ToolTip": "C:\\Users\\BIN COMPUTER\\source\\repos\\Article\\Article13_ComboBox\\Form1.Designer.cs",
+              "RelativeToolTip": "Article13_ComboBox\\Form1.Designer.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAmwDgAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T04:15:19.694Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\BIN COMPUTER\\source\\repos\\Article\\Article13_ComboBox\\Form1.cs",
+              "RelativeDocumentMoniker": "Article13_ComboBox\\Form1.cs",
+              "ToolTip": "C:\\Users\\BIN COMPUTER\\source\\repos\\Article\\Article13_ComboBox\\Form1.cs",
+              "RelativeToolTip": "Article13_ComboBox\\Form1.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAA0wC8AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T04:15:09.685Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Faculty.cs",
+              "DocumentMoniker": "C:\\Users\\BIN COMPUTER\\source\\repos\\Article\\Article13_ComboBox\\Faculty.cs",
+              "RelativeDocumentMoniker": "Article13_ComboBox\\Faculty.cs",
+              "ToolTip": "C:\\Users\\BIN COMPUTER\\source\\repos\\Article\\Article13_ComboBox\\Faculty.cs",
+              "RelativeToolTip": "Article13_ComboBox\\Faculty.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAxwAcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T04:14:56.09Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\BIN COMPUTER\\source\\repos\\Article\\Article13_ComboBox\\Program.cs",
+              "RelativeDocumentMoniker": "Article13_ComboBox\\Program.cs",
+              "ToolTip": "C:\\Users\\BIN COMPUTER\\source\\repos\\Article\\Article13_ComboBox\\Program.cs",
+              "RelativeToolTip": "Article13_ComboBox\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T04:14:27.839Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\BIN COMPUTER\\source\\repos\\Article\\Article13_ComboBox\\Form1.cs",
+              "RelativeDocumentMoniker": "Article13_ComboBox\\Form1.cs",
+              "ToolTip": "C:\\Users\\BIN COMPUTER\\source\\repos\\Article\\Article13_ComboBox\\Form1.cs [Design]",
+              "RelativeToolTip": "Article13_ComboBox\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T04:14:20.355Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\BIN COMPUTER\\source\\repos\\Article\\Article12\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "Article12\\Form1.Designer.cs",
+              "ToolTip": "C:\\Users\\BIN COMPUTER\\source\\repos\\Article\\Article12\\Form1.Designer.cs",
+              "RelativeToolTip": "Article12\\Form1.Designer.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAmwEYAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T04:08:47.644Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\BIN COMPUTER\\source\\repos\\Article\\Article12\\Form1.cs",
+              "RelativeDocumentMoniker": "Article12\\Form1.cs",
+              "ToolTip": "C:\\Users\\BIN COMPUTER\\source\\repos\\Article\\Article12\\Form1.cs",
+              "RelativeToolTip": "Article12\\Form1.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAmwBUAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T04:08:38.859Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\BIN COMPUTER\\source\\repos\\Article\\Article12\\Program.cs",
+              "RelativeDocumentMoniker": "Article12\\Program.cs",
+              "ToolTip": "C:\\Users\\BIN COMPUTER\\source\\repos\\Article\\Article12\\Program.cs",
+              "RelativeToolTip": "Article12\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T04:08:28.77Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\BIN COMPUTER\\source\\repos\\Article\\Article12\\Form1.cs",
+              "RelativeDocumentMoniker": "Article12\\Form1.cs",
+              "ToolTip": "C:\\Users\\BIN COMPUTER\\source\\repos\\Article\\Article12\\Form1.cs [Design]",
+              "RelativeToolTip": "Article12\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T04:08:21.545Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

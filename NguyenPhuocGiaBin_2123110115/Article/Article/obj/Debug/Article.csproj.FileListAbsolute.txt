@@ -1,0 +1,13 @@
+C:\Users\BIN COMPUTER\source\repos\Article\Article\bin\Debug\Article.exe.config
+C:\Users\BIN COMPUTER\source\repos\Article\Article\bin\Debug\Article.exe
+C:\Users\BIN COMPUTER\source\repos\Article\Article\bin\Debug\Article.pdb
+C:\Users\BIN COMPUTER\source\repos\Article\Article\obj\Debug\Article.csproj.AssemblyReference.cache
+C:\Users\BIN COMPUTER\source\repos\Article\Article\obj\Debug\Article01.Article01.resources
+C:\Users\BIN COMPUTER\source\repos\Article\Article\obj\Debug\Article.Properties.Resources.resources
+C:\Users\BIN COMPUTER\source\repos\Article\Article\obj\Debug\Article.csproj.GenerateResource.cache
+C:\Users\BIN COMPUTER\source\repos\Article\Article\obj\Debug\Article.csproj.CoreCompileInputs.cache
+C:\Users\BIN COMPUTER\source\repos\Article\Article\obj\Debug\Article.exe
+C:\Users\BIN COMPUTER\source\repos\Article\Article\obj\Debug\Article.pdb
+C:\Users\BIN COMPUTER\source\repos\Article\Article\obj\Debug\Article.exe.config
+C:\Users\BIN COMPUTER\source\repos\Article\Article\obj\Debug\Article02.Article02.resources
+C:\Users\BIN COMPUTER\source\repos\Article\Article\obj\Debug\Article03.Article03.resources

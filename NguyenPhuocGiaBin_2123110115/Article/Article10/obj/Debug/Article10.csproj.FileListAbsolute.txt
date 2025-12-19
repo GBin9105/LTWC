@@ -1,0 +1,10 @@
+C:\Users\BIN COMPUTER\source\repos\Article\Article10\bin\Debug\Article10.exe.config
+C:\Users\BIN COMPUTER\source\repos\Article\Article10\bin\Debug\Article10.exe
+C:\Users\BIN COMPUTER\source\repos\Article\Article10\bin\Debug\Article10.pdb
+C:\Users\BIN COMPUTER\source\repos\Article\Article10\obj\Debug\Article10.csproj.AssemblyReference.cache
+C:\Users\BIN COMPUTER\source\repos\Article\Article10\obj\Debug\Article10.Form1.resources
+C:\Users\BIN COMPUTER\source\repos\Article\Article10\obj\Debug\Article10.Properties.Resources.resources
+C:\Users\BIN COMPUTER\source\repos\Article\Article10\obj\Debug\Article10.csproj.GenerateResource.cache
+C:\Users\BIN COMPUTER\source\repos\Article\Article10\obj\Debug\Article10.csproj.CoreCompileInputs.cache
+C:\Users\BIN COMPUTER\source\repos\Article\Article10\obj\Debug\Article10.exe
+C:\Users\BIN COMPUTER\source\repos\Article\Article10\obj\Debug\Article10.pdb

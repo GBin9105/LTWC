@@ -1,0 +1,10 @@
+C:\Users\BIN COMPUTER\source\repos\Article\Article09\bin\Debug\Article09.exe.config
+C:\Users\BIN COMPUTER\source\repos\Article\Article09\bin\Debug\Article09.exe
+C:\Users\BIN COMPUTER\source\repos\Article\Article09\bin\Debug\Article09.pdb
+C:\Users\BIN COMPUTER\source\repos\Article\Article09\obj\Debug\Article09.csproj.AssemblyReference.cache
+C:\Users\BIN COMPUTER\source\repos\Article\Article09\obj\Debug\Article09.Form1.resources
+C:\Users\BIN COMPUTER\source\repos\Article\Article09\obj\Debug\Article09.Properties.Resources.resources
+C:\Users\BIN COMPUTER\source\repos\Article\Article09\obj\Debug\Article09.csproj.GenerateResource.cache
+C:\Users\BIN COMPUTER\source\repos\Article\Article09\obj\Debug\Article09.csproj.CoreCompileInputs.cache
+C:\Users\BIN COMPUTER\source\repos\Article\Article09\obj\Debug\Article09.exe
+C:\Users\BIN COMPUTER\source\repos\Article\Article09\obj\Debug\Article09.pdb

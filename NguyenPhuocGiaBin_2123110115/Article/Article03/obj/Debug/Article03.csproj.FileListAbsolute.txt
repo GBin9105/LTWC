@@ -1,0 +1,11 @@
+C:\Users\BIN COMPUTER\source\repos\Article\Article03\bin\Debug\Article03.exe.config
+C:\Users\BIN COMPUTER\source\repos\Article\Article03\bin\Debug\Article03.exe
+C:\Users\BIN COMPUTER\source\repos\Article\Article03\bin\Debug\Article03.pdb
+C:\Users\BIN COMPUTER\source\repos\Article\Article03\obj\Debug\Article03.csproj.AssemblyReference.cache
+C:\Users\BIN COMPUTER\source\repos\Article\Article03\obj\Debug\Article03.Article03.resources
+C:\Users\BIN COMPUTER\source\repos\Article\Article03\obj\Debug\Article03.Properties.Resources.resources
+C:\Users\BIN COMPUTER\source\repos\Article\Article03\obj\Debug\Article03.csproj.GenerateResource.cache
+C:\Users\BIN COMPUTER\source\repos\Article\Article03\obj\Debug\Article03.csproj.CoreCompileInputs.cache
+C:\Users\BIN COMPUTER\source\repos\Article\Article03\obj\Debug\Article03.exe
+C:\Users\BIN COMPUTER\source\repos\Article\Article03\obj\Debug\Article03.pdb
+C:\Users\BIN COMPUTER\source\repos\Article\Article03\obj\Debug\Article03.exe.config

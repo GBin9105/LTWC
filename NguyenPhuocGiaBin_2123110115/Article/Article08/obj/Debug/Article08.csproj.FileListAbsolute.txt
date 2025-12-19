@@ -1,0 +1,10 @@
+C:\Users\BIN COMPUTER\source\repos\Article\Article08\bin\Debug\Article08.exe.config
+C:\Users\BIN COMPUTER\source\repos\Article\Article08\bin\Debug\Article08.exe
+C:\Users\BIN COMPUTER\source\repos\Article\Article08\bin\Debug\Article08.pdb
+C:\Users\BIN COMPUTER\source\repos\Article\Article08\obj\Debug\Article08.csproj.AssemblyReference.cache
+C:\Users\BIN COMPUTER\source\repos\Article\Article08\obj\Debug\Article08.Form1.resources
+C:\Users\BIN COMPUTER\source\repos\Article\Article08\obj\Debug\Article08.Properties.Resources.resources
+C:\Users\BIN COMPUTER\source\repos\Article\Article08\obj\Debug\Article08.csproj.GenerateResource.cache
+C:\Users\BIN COMPUTER\source\repos\Article\Article08\obj\Debug\Article08.csproj.CoreCompileInputs.cache
+C:\Users\BIN COMPUTER\source\repos\Article\Article08\obj\Debug\Article08.exe
+C:\Users\BIN COMPUTER\source\repos\Article\Article08\obj\Debug\Article08.pdb
