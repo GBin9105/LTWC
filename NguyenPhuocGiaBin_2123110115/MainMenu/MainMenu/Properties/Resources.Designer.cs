@@ -83,9 +83,29 @@ namespace MainMenu.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap ground_tiles {
+            get {
+                object obj = ResourceManager.GetObject("ground_tiles", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap hand {
             get {
                 object obj = ResourceManager.GetObject("hand", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap obstacle {
+            get {
+                object obj = ResourceManager.GetObject("obstacle", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

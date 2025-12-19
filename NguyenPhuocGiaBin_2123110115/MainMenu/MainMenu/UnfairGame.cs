@@ -14,7 +14,11 @@ namespace MainMenu
 
         List<PictureBox> realGrounds = new();
         List<PictureBox> fakeGrounds = new();
+        List<PictureBox> randomFakeGrounds = new();
         List<Hazard> hazards = new();
+
+        List<Rectangle> fakeSpawnZones = new();
+        Random rng = new Random();
 
 
         System.Windows.Forms.Timer gameTimer = new System.Windows.Forms.Timer();
@@ -22,7 +26,10 @@ namespace MainMenu
 
         int vx, vy;
         int gravity = 2;
-        int jumpPower = -18;
+        int jumpPower = -20;
+        int prevPlayerBottom;
+        int prevPlayerLeft;
+
 
         bool left, right, jumping;
         int deathCount = 0;
@@ -43,9 +50,10 @@ namespace MainMenu
             KeyPreview = true;
             DoubleBuffered = true;
 
-            // 🎨 BACKGROUND
             BackgroundImage = Properties.Resources.bg;
             BackgroundImageLayout = ImageLayout.Stretch;
+
+            SoundManager.PlayBackground("bg.wav");
 
             SetupLevel();
 
@@ -64,7 +72,9 @@ namespace MainMenu
             Controls.Clear();
             realGrounds.Clear();
             fakeGrounds.Clear();
+            randomFakeGrounds.Clear();
             hazards.Clear();
+            fakeSpawnZones.Clear();
 
             player = new PictureBox
             {
@@ -85,7 +95,7 @@ namespace MainMenu
             Controls.Add(player);
             Controls.Add(goal);
 
-            // ===== TẦNG DƯỚI =====
+            // ===== MAP =====
             AddRealGround(0, 520);
             AddFakeGround(180, 520, 90);
             AddRealGround(270, 520, 140);
@@ -98,12 +108,10 @@ namespace MainMenu
             AddBlock(640, 425);
             AddBlock(940, 425);
 
-            // ===== LÊN TẦNG TRÊN =====
             AddRealGround(220, 470, 60);
             AddRealGround(280, 420, 60);
             AddRealGround(340, 370, 60);
 
-            // ===== TẦNG TRÊN =====
             AddRealGround(420, 260, 160);
             AddFakeGround(580, 260, 100);
             AddRealGround(680, 260, 160);
@@ -113,13 +121,71 @@ namespace MainMenu
             AddBlock(560, 165);
             AddBlock(820, 165);
 
-            // ===== ĐOẠN SAU =====
             AddFakeGround(1180, 260, 120);
             AddRealGround(1300, 260, 180);
             AddFakeGround(1480, 260, 120);
             AddBlock(1380, 165);
 
             CreateInvisibleStairs();
+            CreateFakeSpawnZones();
+            SpawnRandomFakeGrounds();
+        }
+
+        // ================= RANDOM FAKE =================
+        void CreateFakeSpawnZones()
+        {
+            foreach (var g in realGrounds)
+            {
+                // ❌ bỏ stair và block
+                if (!g.Visible) continue;
+                if (g.Height != 40) continue;
+
+                fakeSpawnZones.Add(new Rectangle(
+                    g.Left,
+                    g.Top - 40,
+                    g.Width,
+                    40
+                ));
+            }
+        }
+
+        void SpawnRandomFakeGrounds()
+        {
+            if (fakeSpawnZones.Count == 0) return;
+
+            const int TARGET = 4;
+            int attempts = 0;
+
+            while (randomFakeGrounds.Count < TARGET && attempts < 150)
+            {
+                attempts++;
+
+                var zone = fakeSpawnZones[rng.Next(fakeSpawnZones.Count)];
+                int width = rng.Next(60, 120);
+
+                var rect = new Rectangle(
+                    zone.Left + rng.Next(Math.Max(1, zone.Width - width)),
+                    zone.Top,
+                    width,
+                    40
+                );
+
+                bool overlap =
+                    fakeGrounds.Exists(f => rect.IntersectsWith(f.Bounds)) ||
+                    randomFakeGrounds.Exists(f => rect.IntersectsWith(f.Bounds));
+
+                if (overlap) continue;
+
+                var fake = new PictureBox
+                {
+                    Bounds = rect,
+                    BackgroundImage = Properties.Resources.ground_tiles,
+                    BackgroundImageLayout = ImageLayout.Tile
+                };
+
+                randomFakeGrounds.Add(fake);
+                Controls.Add(fake);
+            }
         }
 
         // ================= STAIRS =================
@@ -151,21 +217,7 @@ namespace MainMenu
         void SpawnHazards()
         {
             int px = player.Left + player.Width / 2;
-            SpawnSpikeUp(px);
             SpawnFallingHand(px);
-        }
-
-        void SpawnSpikeUp(int x)
-        {
-            var box = new PictureBox
-            {
-                Size = new Size(30, 60),
-                BackColor = Color.DarkRed,
-                Location = new Point(x - 15, 520 + MAP_OFFSET_Y)
-            };
-
-            Controls.Add(box);
-            hazards.Add(new Hazard { Box = box, IsFalling = false, SpawnTime = Environment.TickCount });
         }
 
         void SpawnFallingHand(int x)
@@ -180,28 +232,64 @@ namespace MainMenu
             };
 
             Controls.Add(box);
+            SoundManager.PlayEffect("hand.wav");
+
             hazards.Add(new Hazard { Box = box, IsFalling = true, SpawnTime = Environment.TickCount });
         }
 
         // ================= GAME LOOP =================
         void GameLoop(object sender, EventArgs e)
         {
-            vx = left ? -6 : right ? 6 : 0;
+            // ===== LƯU TRẠNG THÁI FRAME TRƯỚC =====
+            prevPlayerBottom = player.Bottom;
+            prevPlayerLeft = player.Left;
 
+            // ===== MOVE X =====
+            vx = left ? -6 : right ? 6 : 0;
             player.Left += vx;
+
+            // ===== COLLISION NGANG (CHẶN BLOCK, KHÔNG LEO) =====
+            foreach (var g in realGrounds)
+            {
+                if (!player.Bounds.IntersectsWith(g.Bounds)) continue;
+
+                // Đụng từ trái sang phải
+                if (vx > 0 && prevPlayerLeft + player.Width <= g.Left)
+                {
+                    player.Left = g.Left - player.Width;
+                }
+                // Đụng từ phải sang trái
+                else if (vx < 0 && prevPlayerLeft >= g.Right)
+                {
+                    player.Left = g.Right;
+                }
+            }
+
+            // ===== MOVE Y =====
             player.Top += vy;
             vy += gravity;
 
+            // ===== COLLISION DỌC (CHỈ ĐỨNG KHI RƠI XUỐNG) =====
             foreach (var g in realGrounds)
             {
-                if (player.Bounds.IntersectsWith(g.Bounds) && vy >= 0)
+                if (!player.Bounds.IntersectsWith(g.Bounds)) continue;
+
+                // Rơi từ trên xuống → đứng lên ground
+                if (vy >= 0 && prevPlayerBottom <= g.Top)
                 {
                     player.Top = g.Top - player.Height;
                     vy = 0;
                     jumping = false;
                 }
+                // Đập đầu từ dưới lên
+                else if (vy < 0 && player.Top >= g.Bottom)
+                {
+                    player.Top = g.Bottom;
+                    vy = 0;
+                }
             }
 
+            // ===== HAZARDS =====
             for (int i = hazards.Count - 1; i >= 0; i--)
             {
                 var h = hazards[i];
@@ -223,37 +311,42 @@ namespace MainMenu
                 }
             }
 
-            // 🔥 FIX QUAN TRỌNG: RƠI KHỎI MAP
+            // ===== FALL OUT =====
             if (player.Top > Height)
             {
                 Die();
                 return;
             }
 
+            // ===== WIN =====
             if (player.Bounds.IntersectsWith(goal.Bounds))
             {
                 gameTimer.Stop();
                 hazardTimer.Stop();
+
+                SoundManager.StopBackground();
+                SoundManager.PlayEffect("win.wav");
+
                 MessageBox.Show($"You won.\nDeaths: {deathCount}", "Finally.");
                 Close();
             }
         }
-
         // ================= DIE =================
         void Die()
         {
             deathCount++;
+            SoundManager.PlayEffect("die.wav");
 
             gameTimer.Stop();
             hazardTimer.Stop();
 
-            left = right = jumping = false;
-            vx = vy = 0;
+            foreach (var f in randomFakeGrounds)
+                Controls.Remove(f);
+            randomFakeGrounds.Clear();
 
-            MessageBox.Show("Again.", "😈");
+            SpawnRandomFakeGrounds();
 
             player.Location = new Point(80, 420 + MAP_OFFSET_Y);
-            player.BringToFront();
 
             foreach (var h in hazards)
             {
@@ -272,8 +365,9 @@ namespace MainMenu
             var g = new PictureBox
             {
                 Size = new Size(w, 40),
-                BackColor = Color.Gray,
-                Location = new Point(x, y + MAP_OFFSET_Y)
+                Location = new Point(x, y + MAP_OFFSET_Y),
+                BackgroundImage = Properties.Resources.ground_tiles,
+                BackgroundImageLayout = ImageLayout.Tile
             };
             realGrounds.Add(g);
             Controls.Add(g);
@@ -284,8 +378,9 @@ namespace MainMenu
             var g = new PictureBox
             {
                 Size = new Size(w, 40),
-                BackColor = Color.Gray,
-                Location = new Point(x, y + MAP_OFFSET_Y)
+                Location = new Point(x, y + MAP_OFFSET_Y),
+                BackgroundImage = Properties.Resources.ground_tiles,
+                BackgroundImageLayout = ImageLayout.Tile
             };
             fakeGrounds.Add(g);
             Controls.Add(g);
@@ -313,6 +408,7 @@ namespace MainMenu
             {
                 vy = jumpPower;
                 jumping = true;
+                SoundManager.PlayEffect("jump.wav");
             }
 
             if (e.KeyCode == Keys.Escape) Close();

@@ -49,3 +49,17 @@ D:\NguyenPhuocGiaBin_2123110115\MainMenu\MainMenu\obj\Debug\net8.0-windows\MainM
 D:\NguyenPhuocGiaBin_2123110115\MainMenu\MainMenu\obj\Debug\net8.0-windows\MainMenu.FormRacing.resources
 D:\NguyenPhuocGiaBin_2123110115\MainMenu\MainMenu\obj\Debug\net8.0-windows\MainMenu.UnfairGame.resources
 D:\NguyenPhuocGiaBin_2123110115\MainMenu\MainMenu\obj\Debug\net8.0-windows\MainMenu.Properties.Resources.resources
+D:\NguyenPhuocGiaBin_2123110115\MainMenu\MainMenu\bin\Debug\net8.0-windows\Sounds\bg.wav
+D:\NguyenPhuocGiaBin_2123110115\MainMenu\MainMenu\bin\Debug\net8.0-windows\Sounds\die.wav
+D:\NguyenPhuocGiaBin_2123110115\MainMenu\MainMenu\bin\Debug\net8.0-windows\Sounds\hand.wav
+D:\NguyenPhuocGiaBin_2123110115\MainMenu\MainMenu\bin\Debug\net8.0-windows\Sounds\jump.wav
+D:\NguyenPhuocGiaBin_2123110115\MainMenu\MainMenu\bin\Debug\net8.0-windows\Sounds\win.wav
+D:\NguyenPhuocGiaBin_2123110115\MainMenu\MainMenu\obj\Debug\net8.0-windows\MainMenu.csproj.AssemblyReference.cache
+D:\NguyenPhuocGiaBin_2123110115\MainMenu\MainMenu\bin\Debug\net8.0-windows\NAudio.dll
+D:\NguyenPhuocGiaBin_2123110115\MainMenu\MainMenu\bin\Debug\net8.0-windows\NAudio.Asio.dll
+D:\NguyenPhuocGiaBin_2123110115\MainMenu\MainMenu\bin\Debug\net8.0-windows\NAudio.Core.dll
+D:\NguyenPhuocGiaBin_2123110115\MainMenu\MainMenu\bin\Debug\net8.0-windows\NAudio.Midi.dll
+D:\NguyenPhuocGiaBin_2123110115\MainMenu\MainMenu\bin\Debug\net8.0-windows\NAudio.Wasapi.dll
+D:\NguyenPhuocGiaBin_2123110115\MainMenu\MainMenu\bin\Debug\net8.0-windows\NAudio.WinForms.dll
+D:\NguyenPhuocGiaBin_2123110115\MainMenu\MainMenu\bin\Debug\net8.0-windows\NAudio.WinMM.dll
+D:\NguyenPhuocGiaBin_2123110115\MainMenu\MainMenu\obj\Debug\net8.0-windows\MainMenu.csproj.Up2Date

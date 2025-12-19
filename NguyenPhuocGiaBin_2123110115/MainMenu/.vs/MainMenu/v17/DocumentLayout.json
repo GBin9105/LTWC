@@ -7,16 +7,12 @@
       "RelativeMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|solutionrelative:mainmenu\\unfairgame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|d:\\nguyenphuocgiabin_2123110115\\mainmenu\\mainmenu\\soundmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|solutionrelative:mainmenu\\soundmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|d:\\nguyenphuocgiabin_2123110115\\mainmenu\\mainmenu\\unfairgame.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|solutionrelative:mainmenu\\unfairgame.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|d:\\nguyenphuocgiabin_2123110115\\mainmenu\\mainmenu\\properties\\resources.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}",
-      "RelativeMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|solutionrelative:mainmenu\\properties\\resources.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|d:\\nguyenphuocgiabin_2123110115\\mainmenu\\mainmenu\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|solutionrelative:mainmenu\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,37 +30,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Resources.resx",
-              "DocumentMoniker": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\Properties\\Resources.resx",
-              "RelativeDocumentMoniker": "MainMenu\\Properties\\Resources.resx",
-              "ToolTip": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\Properties\\Resources.resx",
-              "RelativeToolTip": "MainMenu\\Properties\\Resources.resx",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2025-12-19T11:14:02.646Z",
+              "DocumentIndex": 1,
+              "Title": "SoundManager.cs",
+              "DocumentMoniker": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\SoundManager.cs",
+              "RelativeDocumentMoniker": "MainMenu\\SoundManager.cs",
+              "ToolTip": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\SoundManager.cs",
+              "RelativeToolTip": "MainMenu\\SoundManager.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAkwFAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T12:44:59.229Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\Form1.cs",
-              "RelativeDocumentMoniker": "MainMenu\\Form1.cs",
-              "ToolTip": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\Form1.cs",
-              "RelativeToolTip": "MainMenu\\Form1.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAIwB8AAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-05T07:52:57.318Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "UnfairGame.Designer.cs",
               "DocumentMoniker": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\UnfairGame.Designer.cs",
               "RelativeDocumentMoniker": "MainMenu\\UnfairGame.Designer.cs",
               "ToolTip": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\UnfairGame.Designer.cs",
               "RelativeToolTip": "MainMenu\\UnfairGame.Designer.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAkwC0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-19T06:52:10.637Z",
               "EditorCaption": ""
@@ -77,7 +62,7 @@
               "RelativeDocumentMoniker": "MainMenu\\UnfairGame.cs",
               "ToolTip": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\UnfairGame.cs",
               "RelativeToolTip": "MainMenu\\UnfairGame.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAKcBAAAAAAAAAAAAAKcBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-19T06:50:42.287Z",
               "EditorCaption": ""
