@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace MainMenu
@@ -20,11 +21,13 @@ namespace MainMenu
 
         protected override void Dispose(bool disposing)
         {
-            if (disposing && components != null)
+            if (disposing && (components != null))
                 components.Dispose();
 
             base.Dispose(disposing);
         }
+
+        #region Windows Form Designer generated code
 
         private void InitializeComponent()
         {
@@ -41,24 +44,25 @@ namespace MainMenu
 
             ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ground)).BeginInit();
+            this.hudPanel.SuspendLayout();
             this.SuspendLayout();
 
-            // ==========================================================================
-            // GAME TIMER (FPS BOOST)
-            // ==========================================================================
-            this.gameTimer.Interval = 8;                     // ~120 FPS
-            this.gameTimer.Tick += new System.EventHandler(this.gameTimer_Tick);
+            // ============================================================
+            // GAME TIMER
+            // ============================================================
+            this.gameTimer.Interval = 8;
+            this.gameTimer.Tick += new EventHandler(this.gameTimer_Tick);
 
-            // ==========================================================================
+            // ============================================================
             // HUD PANEL
-            // ==========================================================================
+            // ============================================================
             this.hudPanel.BackColor = Color.FromArgb(30, 30, 30);
             this.hudPanel.Dock = DockStyle.Top;
             this.hudPanel.Height = 80;
             this.hudPanel.Padding = new Padding(20, 10, 20, 10);
             this.hudPanel.Name = "hudPanel";
 
-            // LABEL: SCORE
+            // SCORE
             this.lblScore.ForeColor = Color.White;
             this.lblScore.Font = new Font("Segoe UI", 22F, FontStyle.Bold);
             this.lblScore.AutoSize = true;
@@ -66,7 +70,7 @@ namespace MainMenu
             this.lblScore.Name = "lblScore";
             this.lblScore.Text = "Điểm: 0";
 
-            // LABEL: LIVES
+            // LIVES
             this.lblLives.ForeColor = Color.White;
             this.lblLives.Font = new Font("Segoe UI", 22F, FontStyle.Bold);
             this.lblLives.AutoSize = true;
@@ -74,7 +78,7 @@ namespace MainMenu
             this.lblLives.Name = "lblLives";
             this.lblLives.Text = "Mạng: 3";
 
-            // LABEL: SPEED
+            // SPEED
             this.lblSpeed.ForeColor = Color.White;
             this.lblSpeed.Font = new Font("Segoe UI", 22F, FontStyle.Bold);
             this.lblSpeed.AutoSize = true;
@@ -82,7 +86,7 @@ namespace MainMenu
             this.lblSpeed.Name = "lblSpeed";
             this.lblSpeed.Text = "Tốc độ: 10";
 
-            // LABEL: MODE
+            // MODE
             this.lblMode.ForeColor = Color.White;
             this.lblMode.Font = new Font("Segoe UI", 22F, FontStyle.Bold);
             this.lblMode.AutoSize = true;
@@ -95,44 +99,51 @@ namespace MainMenu
             this.hudPanel.Controls.Add(this.lblSpeed);
             this.hudPanel.Controls.Add(this.lblMode);
 
-            // ==========================================================================
+            // ============================================================
             // PLAYER
-            // ==========================================================================
+            // ============================================================
             this.player.BackColor = Color.LimeGreen;
             this.player.Size = new Size(80, 80);
             this.player.Location = new Point(300, 400);
             this.player.Name = "player";
             this.player.SizeMode = PictureBoxSizeMode.StretchImage;
+            this.player.TabStop = false;
 
-            // ==========================================================================
+            // ============================================================
             // GROUND
-            // ==========================================================================
+            // ============================================================
             this.ground.BackColor = Color.SaddleBrown;
             this.ground.Dock = DockStyle.Bottom;
             this.ground.Height = 100;
             this.ground.Name = "ground";
+            this.ground.TabStop = false;
 
-            // ==========================================================================
-            // FORM SETTINGS
-            // ==========================================================================
+            // ============================================================
+            // FORM
+            // ============================================================
+            this.AutoScaleMode = AutoScaleMode.None;
             this.BackColor = Color.WhiteSmoke;
             this.ClientSize = new Size(1600, 900);
-
             this.Controls.Add(this.player);
             this.Controls.Add(this.hudPanel);
             this.Controls.Add(this.ground);
 
             this.KeyPreview = true;
             this.Name = "DinoEvolution";
+            this.StartPosition = FormStartPosition.CenterScreen;
             this.Text = "Dino Evolution";
 
-            this.Load += new System.EventHandler(this.DinoEvolution_Load);
+            this.Load += new EventHandler(this.DinoEvolution_Load);
             this.KeyDown += new KeyEventHandler(this.DinoEvolution_KeyDown);
             this.KeyUp += new KeyEventHandler(this.DinoEvolution_KeyUp);
 
+            this.hudPanel.ResumeLayout(false);
+            this.hudPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ground)).EndInit();
             this.ResumeLayout(false);
         }
+
+        #endregion
     }
 }

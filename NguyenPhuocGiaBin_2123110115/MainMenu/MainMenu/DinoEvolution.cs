@@ -14,23 +14,23 @@ namespace MainMenu
         bool moveLeft = false;
         bool moveRight = false;
         bool moveUp = false;
-        bool moveDown = false;
+        bool moveDown = false; // chỉ dùng cho Pterosaur
 
         int moveSpeed = 12;
 
-        // PHYSICS
-        int gravity = 2;
-        int jumpSpeed = -26;
+        // ================= PHYSICS =================
+        int gravity = 1;
+        int jumpSpeed = -30;
         int verticalSpeed = 0;
 
-        // TRIPLE JUMP
+        // ================= JUMP =================
         int jumpCount = 0;
         const int maxJump = 3;
 
-        // LIVES
+        // ================= LIVES =================
         int lives = 3;
 
-        // INVINCIBILITY
+        // ================= INVINCIBILITY =================
         bool invincible = false;
         DateTime invincibleUntil;
 
@@ -40,22 +40,13 @@ namespace MainMenu
 
         List<PictureBox> obstacles = new();
 
-        // BOSS
+        // ================= BOSS =================
         PictureBox boss;
         bool bossActive = false;
         DateTime lastBossSpawn = DateTime.Now;
         DateTime bossDespawnTime;
-        bool bossHasFiredOnce = false;
 
-        // LASER SYSTEM
-        PictureBox laser;
-        bool laserActive = false;
-        int laserPhase = 0;
-        int laserVx = 0;
-        int sweepDirection = 0;       // 1 = down, -1 = up
-        int sweepDistance = 0;        // random 80–150
-        int sweepMoved = 0;
-
+        // ================= BULLETS & MISSILES =================
         List<(PictureBox bullet, int vx, int vy)> bullets = new();
         List<(PictureBox missile, int vx, int vy)> missiles = new();
 
@@ -87,18 +78,17 @@ namespace MainMenu
 
             if (!isPtero)
             {
-                int count = rand.Next(20, 40);
-                int startX = Width + 200;
+                int count = rand.Next(10, 18);
+                int startX = Width + 300;
 
                 for (int i = 0; i < count; i++)
                 {
                     PictureBox obs = new();
                     obs.BackColor = Color.Brown;
-                    obs.Width = 40 * rand.Next(1, 4);
-                    obs.Height = 50;
+                    obs.Size = new Size(30 * rand.Next(1, 3), 40);
 
                     obs.Top = ground.Top - obs.Height;
-                    obs.Left = startX + i * rand.Next(60, 140);
+                    obs.Left = startX + i * rand.Next(120, 200);
 
                     Controls.Add(obs);
                     obstacles.Add(obs);
@@ -123,7 +113,7 @@ namespace MainMenu
                 }
             }
 
-            int missileCount = rand.Next(6, 10);
+            int missileCount = isPtero ? rand.Next(6, 10) : rand.Next(3, 5);
             for (int i = 0; i < missileCount; i++)
                 SpawnHomingMissile();
         }
@@ -137,7 +127,9 @@ namespace MainMenu
             lblSpeed.Text = "Tốc độ: " + obstacleSpeed;
             lblScore.Text = $"Điểm: {score} | Mạng: {lives}";
 
-            obstacleSpeed = 10 + (score / 10);
+            obstacleSpeed = isPtero
+                ? 12 + (score / 10)
+                : 8 + (score / 20);
 
             if (invincible && DateTime.Now >= invincibleUntil)
             {
@@ -148,19 +140,14 @@ namespace MainMenu
             UpdatePlayer();
             UpdateObstacles();
             UpdateMissiles();
-
             MaybeSpawnBoss();
             UpdateBoss();
             UpdateBullets();
-
-            if (laserActive)
-                UpdateLaser();
-
             CheckCollision();
         }
 
         // =====================================================================
-        // PLAYER MOVEMENT
+        // PLAYER MOVEMENT (NO CROUCH)
         // =====================================================================
         private void UpdatePlayer()
         {
@@ -171,6 +158,7 @@ namespace MainMenu
 
             if (!isPtero)
             {
+                // ===== T-REX: CHỈ CHẠY + NHẢY =====
                 if (moveUp && jumpCount < maxJump && !isJumping)
                 {
                     isJumping = true;
@@ -185,17 +173,19 @@ namespace MainMenu
 
                     if (player.Top >= ground.Top - player.Height - 5)
                     {
-                        isJumping = false;
-                        jumpCount = 0;
-                        verticalSpeed = 0;
                         player.Top = ground.Top - player.Height - 5;
+                        isJumping = false;
+                        verticalSpeed = 0;
+                        jumpCount = 0;
                     }
                 }
 
-                player.Height = moveDown ? 50 : 80;
+                // Chiều cao cố định – KHÔNG NGỒI
+                player.Height = 80;
             }
             else
             {
+                // ===== PTEROSAUR =====
                 if (moveUp) player.Top -= moveSpeed;
                 if (moveDown) player.Top += moveSpeed;
 
@@ -214,7 +204,7 @@ namespace MainMenu
         {
             for (int i = obstacles.Count - 1; i >= 0; i--)
             {
-                PictureBox obs = obstacles[i];
+                var obs = obstacles[i];
                 obs.Left -= obstacleSpeed;
 
                 if (obs.Right < 0)
@@ -230,7 +220,7 @@ namespace MainMenu
         }
 
         // =====================================================================
-        // HOMING MISSILE
+        // MISSILES
         // =====================================================================
         private void SpawnHomingMissile()
         {
@@ -242,20 +232,12 @@ namespace MainMenu
             m.Top = rand.Next(hudPanel.Bottom + 20, ground.Top - 120);
 
             Controls.Add(m);
-            m.BringToFront();
 
-            int tx = player.Left + player.Width / 2;
-            int ty = player.Top + player.Height / 2;
-
-            double dx = tx - m.Left;
-            double dy = ty - m.Top;
+            double dx = (player.Left + player.Width / 2) - m.Left;
+            double dy = (player.Top + player.Height / 2) - m.Top;
             double d = Math.Sqrt(dx * dx + dy * dy);
 
-            int speed = 16;
-            int vx = (int)(speed * dx / d);
-            int vy = (int)(speed * dy / d);
-
-            missiles.Add((m, vx, vy));
+            missiles.Add((m, (int)(16 * dx / d), (int)(16 * dy / d)));
         }
 
         private void UpdateMissiles()
@@ -263,18 +245,16 @@ namespace MainMenu
             for (int i = missiles.Count - 1; i >= 0; i--)
             {
                 var (m, vx, vy) = missiles[i];
-
                 m.Left += vx;
                 m.Top += vy;
 
-                if (!invincible && player.Bounds.IntersectsWith(m.Bounds))
+                if (!invincible && m.Bounds.IntersectsWith(player.Bounds))
                 {
                     LoseLife();
                     return;
                 }
 
-                if (m.Left < -80 || m.Left > Width + 80 ||
-                    m.Top < -80 || m.Top > Height + 80)
+                if (!ClientRectangle.IntersectsWith(m.Bounds))
                 {
                     Controls.Remove(m);
                     missiles.RemoveAt(i);
@@ -283,14 +263,13 @@ namespace MainMenu
         }
 
         // =====================================================================
-        // BOSS SYSTEM
+        // BOSS / BULLETS (GIỮ NGUYÊN)
         // =====================================================================
         private void MaybeSpawnBoss()
         {
             if (!bossActive && (DateTime.Now - lastBossSpawn).TotalSeconds >= 15)
             {
                 lastBossSpawn = DateTime.Now;
-                bossHasFiredOnce = false;
                 SpawnBoss();
             }
         }
@@ -300,18 +279,14 @@ namespace MainMenu
             boss = new PictureBox();
             boss.BackColor = Color.DarkRed;
             boss.Size = new Size(220, 140);
-
-            boss.Top = rand.Next(hudPanel.Bottom + 50, ground.Top - 300);
             boss.Left = Width - 300;
+            boss.Top = rand.Next(hudPanel.Bottom + 50, ground.Top - 300);
 
             Controls.Add(boss);
             bossActive = true;
-
             bossDespawnTime = DateTime.Now.AddSeconds(30);
 
             SpawnBulletCone(rand.Next(20, 40));
-            bossHasFiredOnce = true;
-
             _ = BossFireLoop();
         }
 
@@ -320,7 +295,6 @@ namespace MainMenu
             if (!bossActive || boss == null) return;
 
             boss.Left -= 2;
-
             if (DateTime.Now >= bossDespawnTime)
             {
                 Controls.Remove(boss);
@@ -334,93 +308,27 @@ namespace MainMenu
             while (bossActive && boss != null)
             {
                 await Task.Delay(3000);
-
-                if (bossHasFiredOnce && !laserActive)
-                    ActivateLaser();
-
                 SpawnBulletCone(rand.Next(20, 40));
             }
         }
 
-        // =====================================================================
-        // LASER SYSTEM
-        // =====================================================================
-        private void ActivateLaser()
-        {
-            laser = new PictureBox();
-            laser.BackColor = Color.Cyan;
-            laser.Height = 40;
-            laser.Width = Width; // bắn dài hết màn hình
-
-            laser.Top = boss.Top + boss.Height / 2 - laser.Height / 2;
-
-            bool shootDown = rand.Next(0, 2) == 0;
-            sweepDirection = shootDown ? 1 : -1;
-
-            sweepDistance = rand.Next(80, 150);
-            sweepMoved = 0;
-
-            laser.Left = 0;
-
-            Controls.Add(laser);
-            laser.BringToFront();
-
-            laserPhase = 0;
-            laserActive = true;
-        }
-
-        private void UpdateLaser()
-        {
-            if (laser == null) return;
-
-            // Phase 0 – đứng yên 1 tí trước khi quét
-            if (laserPhase == 0)
-            {
-                laserPhase = 1;
-            }
-            else
-            {
-                // Phase 1 – Quét lên hoặc xuống
-                int move = 4 * sweepDirection;
-                laser.Top += move;
-                sweepMoved += Math.Abs(move);
-
-                if (sweepMoved >= sweepDistance)
-                {
-                    Controls.Remove(laser);
-                    laser = null;
-                    laserActive = false;
-                }
-            }
-
-            if (!invincible && player.Bounds.IntersectsWith(laser.Bounds))
-                LoseLife();
-        }
-
-        // =====================================================================
-        // BOSS BULLETS
-        // =====================================================================
         private void SpawnBulletCone(int count)
         {
             if (boss == null) return;
 
             for (int i = 0; i < count; i++)
             {
-                int angle = rand.Next(-80, 81);
-                double rad = angle * Math.PI / 180;
-
-                int vx = (int)(12 * Math.Cos(rad));
-                int vy = (int)(12 * Math.Sin(rad));
-
-                PictureBox b = new();
-                b.BackColor = Color.Yellow;
-                b.Size = new Size(15, 15);
-
-                b.Left = boss.Left;
-                b.Top = boss.Top + boss.Height / 2;
+                double rad = rand.Next(-80, 81) * Math.PI / 180;
+                PictureBox b = new()
+                {
+                    BackColor = Color.Yellow,
+                    Size = new Size(15, 15),
+                    Left = boss.Left,
+                    Top = boss.Top + boss.Height / 2
+                };
 
                 Controls.Add(b);
-                bullets.Add((b, vx, vy));
+                bullets.Add((b, (int)(12 * Math.Cos(rad)), (int)(12 * Math.Sin(rad))));
             }
         }
 
@@ -429,18 +337,16 @@ namespace MainMenu
             for (int i = bullets.Count - 1; i >= 0; i--)
             {
                 var (b, vx, vy) = bullets[i];
-
                 b.Left -= vx;
                 b.Top += vy;
 
-                if (!invincible && player.Bounds.IntersectsWith(b.Bounds))
+                if (!invincible && b.Bounds.IntersectsWith(player.Bounds))
                 {
                     LoseLife();
                     return;
                 }
 
-                if (b.Right < 0 || b.Left > Width ||
-                    b.Bottom < 0 || b.Top > Height)
+                if (!ClientRectangle.IntersectsWith(b.Bounds))
                 {
                     Controls.Remove(b);
                     bullets.RemoveAt(i);
@@ -448,34 +354,27 @@ namespace MainMenu
             }
         }
 
-        // =====================================================================
-        // COLLISION
-        // =====================================================================
         private void CheckCollision()
         {
             foreach (var obs in obstacles)
-                if (!invincible && player.Bounds.IntersectsWith(obs.Bounds))
+                if (!invincible && obs.Bounds.IntersectsWith(player.Bounds))
                 {
                     LoseLife();
                     return;
                 }
 
-            if (!invincible && boss != null && player.Bounds.IntersectsWith(boss.Bounds))
+            if (!invincible && boss != null && boss.Bounds.IntersectsWith(player.Bounds))
             {
                 LoseLife();
                 return;
             }
         }
 
-        // =====================================================================
-        // LIFE SYSTEM
-        // =====================================================================
         private async void LoseLife()
         {
             if (invincible) return;
 
             lives--;
-
             if (lives <= 0)
             {
                 GameOver();
@@ -484,7 +383,6 @@ namespace MainMenu
 
             invincible = true;
             invincibleUntil = DateTime.Now.AddSeconds(1.5);
-
             await FlashInvincible();
         }
 
@@ -535,18 +433,9 @@ namespace MainMenu
             await AnimationHelper.TransformAnimation(player, () =>
             {
                 isPtero = !isPtero;
-
-                if (isPtero)
-                {
-                    player.BackColor = Color.OrangeRed;
-                    player.Size = new Size(110, 60);
-                }
-                else
-                {
-                    player.BackColor = Color.LimeGreen;
-                    player.Size = new Size(80, 80);
-                    jumpCount = 0;
-                }
+                player.Size = isPtero ? new Size(110, 60) : new Size(80, 80);
+                player.BackColor = isPtero ? Color.OrangeRed : Color.LimeGreen;
+                jumpCount = 0;
             });
 
             CreateObstacles();

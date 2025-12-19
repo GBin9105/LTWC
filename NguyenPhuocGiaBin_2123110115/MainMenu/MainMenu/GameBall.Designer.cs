@@ -17,65 +17,70 @@
 
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.ball = new System.Windows.Forms.PictureBox();
-            this.paddle = new System.Windows.Forms.PictureBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.lblScore = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.ball)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.paddle)).BeginInit();
-            this.SuspendLayout();
+            components = new System.ComponentModel.Container();
+            ball = new PictureBox();
+            paddle = new PictureBox();
+            timer1 = new System.Windows.Forms.Timer(components);
+            lblScore = new Label();
+            ((System.ComponentModel.ISupportInitialize)ball).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)paddle).BeginInit();
+            SuspendLayout();
             // 
             // ball
             // 
-            this.ball.BackColor = System.Drawing.Color.Red;
-            this.ball.Location = new System.Drawing.Point(180, 120);
-            this.ball.Name = "ball";
-            this.ball.Size = new System.Drawing.Size(20, 20);
-            this.ball.TabIndex = 0;
-            this.ball.TabStop = false;
+            ball.BackColor = Color.Red;
+            ball.Location = new Point(257, 200);
+            ball.Margin = new Padding(4, 5, 4, 5);
+            ball.Name = "ball";
+            ball.Size = new Size(29, 33);
+            ball.TabIndex = 0;
+            ball.TabStop = false;
             // 
             // paddle
             // 
-            this.paddle.BackColor = System.Drawing.Color.Blue;
-            this.paddle.Location = new System.Drawing.Point(150, 350);
-            this.paddle.Name = "paddle";
-            this.paddle.Size = new System.Drawing.Size(100, 15);
-            this.paddle.TabIndex = 1;
-            this.paddle.TabStop = false;
+            paddle.BackColor = Color.Blue;
+            paddle.Location = new Point(214, 583);
+            paddle.Margin = new Padding(4, 5, 4, 5);
+            paddle.Name = "paddle";
+            paddle.Size = new Size(143, 25);
+            paddle.TabIndex = 1;
+            paddle.TabStop = false;
             // 
             // timer1
             // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 15;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            timer1.Enabled = true;
+            timer1.Interval = 15;
+            timer1.Tick += timer1_Tick;
             // 
             // lblScore
             // 
-            this.lblScore.AutoSize = true;
-            this.lblScore.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.lblScore.Location = new System.Drawing.Point(12, 9);
-            this.lblScore.Name = "lblScore";
-            this.lblScore.Size = new System.Drawing.Size(71, 21);
-            this.lblScore.TabIndex = 2;
-            this.lblScore.Text = "Điểm: 0";
+            lblScore.AutoSize = true;
+            lblScore.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lblScore.Location = new Point(17, 15);
+            lblScore.Margin = new Padding(4, 0, 4, 0);
+            lblScore.Name = "lblScore";
+            lblScore.Size = new Size(102, 32);
+            lblScore.TabIndex = 2;
+            lblScore.Text = "Điểm: 0";
             // 
             // GameBall
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 411);
-            this.Controls.Add(this.lblScore);
-            this.Controls.Add(this.paddle);
-            this.Controls.Add(this.ball);
-            this.Name = "GameBall";
-            this.Text = "Game Bóng";
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GameBall_KeyDown);
-            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.GameBall_KeyUp);
-            ((System.ComponentModel.ISupportInitialize)(this.ball)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.paddle)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(549, 685);
+            Controls.Add(lblScore);
+            Controls.Add(paddle);
+            Controls.Add(ball);
+            Margin = new Padding(4, 5, 4, 5);
+            Name = "GameBall";
+            Text = "Game Bóng";
+            Load += GameBall_Load;
+            KeyDown += GameBall_KeyDown;
+            KeyUp += GameBall_KeyUp;
+            ((System.ComponentModel.ISupportInitialize)ball).EndInit();
+            ((System.ComponentModel.ISupportInitialize)paddle).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 

@@ -1,4 +1,7 @@
-﻿namespace MainMenu
+﻿using System.Drawing;
+using System.Windows.Forms;
+
+namespace MainMenu
 {
     partial class Form1
     {
@@ -7,13 +10,25 @@
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
-            {
                 components.Dispose();
-            }
+
             base.Dispose(disposing);
         }
 
         #region Windows Form Designer generated code
+
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem menuToolStripMenuItem;
+        private ToolStripMenuItem bai1GameBongToolStripMenuItem;
+        private ToolStripMenuItem bai2TrungRoiToolStripMenuItem;
+        private ToolStripMenuItem bai3BatTrungToolStripMenuItem;
+        private ToolStripMenuItem bai4GaDeTrungToolStripMenuItem;
+        private ToolStripMenuItem bai5ThiTracNghiemToolStripMenuItem;
+        private ToolStripMenuItem bai6DinoEvolutionToolStripMenuItem;
+        private ToolStripMenuItem bai7UnfairGameToolStripMenuItem;
+
+        private Label lblTitle;
+        private Label lblSubTitle;
 
         private void InitializeComponent()
         {
@@ -25,91 +40,91 @@
             bai4GaDeTrungToolStripMenuItem = new ToolStripMenuItem();
             bai5ThiTracNghiemToolStripMenuItem = new ToolStripMenuItem();
             bai6DinoEvolutionToolStripMenuItem = new ToolStripMenuItem();
-            menuStrip1.SuspendLayout();
+            bai7UnfairGameToolStripMenuItem = new ToolStripMenuItem();
+            lblTitle = new Label();
+            lblSubTitle = new Label();
+
             SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            menuStrip1.BackColor = Color.LightSkyBlue;
-            menuStrip1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+
+            // ================= MENU STRIP =================
+            menuStrip1.BackColor = Color.FromArgb(30, 30, 30);
+            menuStrip1.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             menuStrip1.ImageScalingSize = new Size(24, 24);
+            menuStrip1.Dock = DockStyle.Top;
+            menuStrip1.Padding = new Padding(20, 10, 20, 10);
+            menuStrip1.Renderer = new ToolStripProfessionalRenderer(new ModernColorTable());
             menuStrip1.Items.AddRange(new ToolStripItem[] { menuToolStripMenuItem });
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(900, 40);
-            menuStrip1.TabIndex = 0;
-            // 
-            // menuToolStripMenuItem
-            // 
-            menuToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { bai1GameBongToolStripMenuItem, bai2TrungRoiToolStripMenuItem, bai3BatTrungToolStripMenuItem, bai4GaDeTrungToolStripMenuItem, bai5ThiTracNghiemToolStripMenuItem, bai6DinoEvolutionToolStripMenuItem });
-            menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            menuToolStripMenuItem.Size = new Size(179, 36);
-            menuToolStripMenuItem.Text = "Menu Games";
-            // 
-            // bai1GameBongToolStripMenuItem
-            // 
-            bai1GameBongToolStripMenuItem.Font = new Font("Segoe UI", 11F);
-            bai1GameBongToolStripMenuItem.Name = "bai1GameBongToolStripMenuItem";
-            bai1GameBongToolStripMenuItem.Size = new Size(342, 38);
-            bai1GameBongToolStripMenuItem.Text = "Bài 1 - Game Bóng";
-            // 
-            // bai2TrungRoiToolStripMenuItem
-            // 
-            bai2TrungRoiToolStripMenuItem.Font = new Font("Segoe UI", 11F);
-            bai2TrungRoiToolStripMenuItem.Name = "bai2TrungRoiToolStripMenuItem";
-            bai2TrungRoiToolStripMenuItem.Size = new Size(342, 38);
-            bai2TrungRoiToolStripMenuItem.Text = "Bài 2 - Trứng Rơi";
-            // 
-            // bai3BatTrungToolStripMenuItem
-            // 
-            bai3BatTrungToolStripMenuItem.Font = new Font("Segoe UI", 11F);
-            bai3BatTrungToolStripMenuItem.Name = "bai3BatTrungToolStripMenuItem";
-            bai3BatTrungToolStripMenuItem.Size = new Size(342, 38);
-            bai3BatTrungToolStripMenuItem.Text = "Bài 3 - Bắt Trứng";
-            // 
-            // bai4GaDeTrungToolStripMenuItem
-            // 
-            bai4GaDeTrungToolStripMenuItem.Font = new Font("Segoe UI", 11F);
-            bai4GaDeTrungToolStripMenuItem.Name = "bai4GaDeTrungToolStripMenuItem";
-            bai4GaDeTrungToolStripMenuItem.Size = new Size(342, 38);
-            bai4GaDeTrungToolStripMenuItem.Text = "Bài 4 - Gà Đẻ Trứng";
-            // 
-            // bai5ThiTracNghiemToolStripMenuItem
-            // 
-            bai5ThiTracNghiemToolStripMenuItem.Font = new Font("Segoe UI", 11F);
-            bai5ThiTracNghiemToolStripMenuItem.Name = "bai5ThiTracNghiemToolStripMenuItem";
-            bai5ThiTracNghiemToolStripMenuItem.Size = new Size(342, 38);
-            bai5ThiTracNghiemToolStripMenuItem.Text = "Bài 5 - Thi Trắc Nghiệm";
-            // 
-            // bai6DinoEvolutionToolStripMenuItem
-            // 
-            bai6DinoEvolutionToolStripMenuItem.Font = new Font("Segoe UI", 11F);
-            bai6DinoEvolutionToolStripMenuItem.Name = "bai6DinoEvolutionToolStripMenuItem";
-            bai6DinoEvolutionToolStripMenuItem.Size = new Size(342, 38);
-            bai6DinoEvolutionToolStripMenuItem.Text = "Bài 6 - Dino Transform";
-            // 
-            // Form1
-            // 
-            ClientSize = new Size(900, 600);
-            Controls.Add(menuStrip1);
-            Name = "Form1";
+
+            // ================= MENU ROOT =================
+            menuToolStripMenuItem.Text = "🎮 GAME MENU";
+            menuToolStripMenuItem.ForeColor = Color.White;
+            menuToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[]
+            {
+                bai1GameBongToolStripMenuItem,
+                bai2TrungRoiToolStripMenuItem,
+                bai3BatTrungToolStripMenuItem,
+                bai4GaDeTrungToolStripMenuItem,
+                bai5ThiTracNghiemToolStripMenuItem,
+                bai6DinoEvolutionToolStripMenuItem,
+                bai7UnfairGameToolStripMenuItem
+            });
+
+            // ================= MENU ITEMS =================
+            ConfigureItem(bai1GameBongToolStripMenuItem, "🎾  Bài 1 - Game Bóng");
+            ConfigureItem(bai2TrungRoiToolStripMenuItem, "🥚  Bài 2 - Trứng Rơi");
+            ConfigureItem(bai3BatTrungToolStripMenuItem, "🧺  Bài 3 - Bắt Trứng");
+            ConfigureItem(bai4GaDeTrungToolStripMenuItem, "🐔  Bài 4 - Gà Đẻ Trứng");
+            ConfigureItem(bai5ThiTracNghiemToolStripMenuItem, "📝  Bài 5 - Trắc Nghiệm");
+            ConfigureItem(bai6DinoEvolutionToolStripMenuItem, "🦖  Bài 6 - Dino Transform");
+            ConfigureItem(bai7UnfairGameToolStripMenuItem, "😈  Bài 7 - Unfair Game");
+
+            // ================= TITLE =================
+            lblTitle.Text = "GAME COLLECTION";
+            lblTitle.Font = new Font("Segoe UI", 36F, FontStyle.Bold);
+            lblTitle.ForeColor = Color.FromArgb(40, 40, 40);
+            lblTitle.AutoSize = true;
+            lblTitle.Location = new Point(60, 140);
+
+            lblSubTitle.Text = "Chọn trò chơi trong menu để bắt đầu";
+            lblSubTitle.Font = new Font("Segoe UI", 16F);
+            lblSubTitle.ForeColor = Color.Gray;
+            lblSubTitle.AutoSize = true;
+            lblSubTitle.Location = new Point(65, 200);
+
+            // ================= FORM =================
+            ClientSize = new Size(1000, 650);
+            BackColor = Color.WhiteSmoke;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Main Menu";
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
+
+            Controls.Add(lblTitle);
+            Controls.Add(lblSubTitle);
+            Controls.Add(menuStrip1);
+
+            MainMenuStrip = menuStrip1;
             ResumeLayout(false);
             PerformLayout();
         }
 
-        #endregion
+        private void ConfigureItem(ToolStripMenuItem item, string text)
+        {
+            item.Text = text;
+            item.Font = new Font("Segoe UI", 12F);
+            item.ForeColor = Color.White;
+            item.BackColor = Color.FromArgb(45, 45, 45);
+        }
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem bai1GameBongToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem bai2TrungRoiToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem bai3BatTrungToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem bai4GaDeTrungToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem bai5ThiTracNghiemToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem bai6DinoEvolutionToolStripMenuItem;
+        #endregion
+    }
+
+    // ================= CUSTOM RENDERER =================
+    class ModernColorTable : ProfessionalColorTable
+    {
+        public override Color MenuItemSelected => Color.FromArgb(60, 120, 200);
+        public override Color MenuItemBorder => Color.Transparent;
+        public override Color ToolStripDropDownBackground => Color.FromArgb(45, 45, 45);
+        public override Color ImageMarginGradientBegin => Color.FromArgb(45, 45, 45);
+        public override Color ImageMarginGradientMiddle => Color.FromArgb(45, 45, 45);
+        public override Color ImageMarginGradientEnd => Color.FromArgb(45, 45, 45);
     }
 }

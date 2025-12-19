@@ -15,9 +15,10 @@ namespace MainMenu
             bai3BatTrungToolStripMenuItem.Click += Bai3_Click;
             bai4GaDeTrungToolStripMenuItem.Click += Bai4_Click;
             bai5ThiTracNghiemToolStripMenuItem.Click += Bai5_Click;
-
-            // Thêm Game 6
             bai6DinoEvolutionToolStripMenuItem.Click += Bai6_Click;
+
+            // 👉 GAME 7 - UNFAIR GAME 😈
+            bai7UnfairGameToolStripMenuItem.Click += Bai7_Click;
         }
 
         private void Bai1_Click(object sender, EventArgs e)
@@ -48,6 +49,16 @@ namespace MainMenu
         private void Bai6_Click(object sender, EventArgs e)
         {
             new DinoEvolution().Show();
+        }
+
+        // 😈 GAME 7
+        private void Bai7_Click(object sender, EventArgs e)
+        {
+            new UnfairGame().Show();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
         }
     }
 }
