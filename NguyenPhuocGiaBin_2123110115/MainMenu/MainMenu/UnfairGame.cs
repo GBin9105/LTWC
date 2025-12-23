@@ -20,19 +20,18 @@ namespace MainMenu
         List<Rectangle> fakeSpawnZones = new();
         Random rng = new Random();
 
-
         System.Windows.Forms.Timer gameTimer = new System.Windows.Forms.Timer();
         System.Windows.Forms.Timer hazardTimer = new System.Windows.Forms.Timer();
 
         int vx, vy;
-        int gravity = 2;
-        int jumpPower = -20;
+        int gravity = 4;
+        int jumpPower = -28;
         int prevPlayerBottom;
         int prevPlayerLeft;
 
-
         bool left, right, jumping;
         int deathCount = 0;
+        bool isEnding = false;
 
         class Hazard
         {
@@ -66,7 +65,39 @@ namespace MainMenu
             hazardTimer.Start();
         }
 
-        // ================= LEVEL =================
+        void EndGame(bool isWin)
+        {
+            if (isEnding) return;
+            isEnding = true;
+
+            gameTimer.Stop();
+            hazardTimer.Stop();
+            SoundManager.StopBackground();
+
+            foreach (var h in hazards)
+            {
+                Controls.Remove(h.Box);
+                h.Box.Dispose();
+            }
+            hazards.Clear();
+
+            if (isWin)
+            {
+                SoundManager.PlayEffect("win.wav");
+                MessageBox.Show($"You won.\nDeaths: {deathCount}", "Finally.");
+            }
+
+            Close();
+        }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            gameTimer.Stop();
+            hazardTimer.Stop();
+            SoundManager.StopBackground();
+            base.OnFormClosing(e);
+        }
+
         void SetupLevel()
         {
             Controls.Clear();
@@ -95,7 +126,6 @@ namespace MainMenu
             Controls.Add(player);
             Controls.Add(goal);
 
-            // ===== MAP =====
             AddRealGround(0, 520);
             AddFakeGround(180, 520, 90);
             AddRealGround(270, 520, 140);
@@ -131,21 +161,14 @@ namespace MainMenu
             SpawnRandomFakeGrounds();
         }
 
-        // ================= RANDOM FAKE =================
         void CreateFakeSpawnZones()
         {
             foreach (var g in realGrounds)
             {
-                // ❌ bỏ stair và block
                 if (!g.Visible) continue;
                 if (g.Height != 40) continue;
 
-                fakeSpawnZones.Add(new Rectangle(
-                    g.Left,
-                    g.Top - 40,
-                    g.Width,
-                    40
-                ));
+                fakeSpawnZones.Add(new Rectangle(g.Left, g.Top - 40, g.Width, 40));
             }
         }
 
@@ -159,7 +182,6 @@ namespace MainMenu
             while (randomFakeGrounds.Count < TARGET && attempts < 150)
             {
                 attempts++;
-
                 var zone = fakeSpawnZones[rng.Next(fakeSpawnZones.Count)];
                 int width = rng.Next(60, 120);
 
@@ -188,7 +210,6 @@ namespace MainMenu
             }
         }
 
-        // ================= STAIRS =================
         void CreateInvisibleStairs()
         {
             int leftX = 1620;
@@ -213,7 +234,6 @@ namespace MainMenu
             }
         }
 
-        // ================= HAZARDS =================
         void SpawnHazards()
         {
             int px = player.Left + player.Width / 2;
@@ -234,54 +254,57 @@ namespace MainMenu
             Controls.Add(box);
             SoundManager.PlayEffect("hand.wav");
 
-            hazards.Add(new Hazard { Box = box, IsFalling = true, SpawnTime = Environment.TickCount });
+            hazards.Add(new Hazard
+            {
+                Box = box,
+                IsFalling = true,
+                SpawnTime = Environment.TickCount
+            });
         }
 
-        // ================= GAME LOOP =================
         void GameLoop(object sender, EventArgs e)
         {
-            // ===== LƯU TRẠNG THÁI FRAME TRƯỚC =====
             prevPlayerBottom = player.Bottom;
             prevPlayerLeft = player.Left;
 
-            // ===== MOVE X =====
             vx = left ? -6 : right ? 6 : 0;
             player.Left += vx;
 
-            // ===== COLLISION NGANG (CHẶN BLOCK, KHÔNG LEO) =====
             foreach (var g in realGrounds)
             {
                 if (!player.Bounds.IntersectsWith(g.Bounds)) continue;
 
-                // Đụng từ trái sang phải
                 if (vx > 0 && prevPlayerLeft + player.Width <= g.Left)
-                {
                     player.Left = g.Left - player.Width;
-                }
-                // Đụng từ phải sang trái
                 else if (vx < 0 && prevPlayerLeft >= g.Right)
-                {
                     player.Left = g.Right;
-                }
             }
 
-            // ===== MOVE Y =====
             player.Top += vy;
             vy += gravity;
 
-            // ===== COLLISION DỌC (CHỈ ĐỨNG KHI RƠI XUỐNG) =====
             foreach (var g in realGrounds)
             {
                 if (!player.Bounds.IntersectsWith(g.Bounds)) continue;
 
-                // Rơi từ trên xuống → đứng lên ground
+                bool onRandomFake = false;
+                foreach (var f in randomFakeGrounds)
+                {
+                    if (player.Bounds.IntersectsWith(f.Bounds))
+                    {
+                        onRandomFake = true;
+                        break;
+                    }
+                }
+
+                if (onRandomFake) continue;
+
                 if (vy >= 0 && prevPlayerBottom <= g.Top)
                 {
                     player.Top = g.Top - player.Height;
                     vy = 0;
                     jumping = false;
                 }
-                // Đập đầu từ dưới lên
                 else if (vy < 0 && player.Top >= g.Bottom)
                 {
                     player.Top = g.Bottom;
@@ -289,13 +312,10 @@ namespace MainMenu
                 }
             }
 
-            // ===== HAZARDS =====
             for (int i = hazards.Count - 1; i >= 0; i--)
             {
                 var h = hazards[i];
-
-                if (h.IsFalling)
-                    h.Box.Top += 14;
+                h.Box.Top += 14;
 
                 if (player.Bounds.IntersectsWith(h.Box.Bounds))
                 {
@@ -311,27 +331,31 @@ namespace MainMenu
                 }
             }
 
-            // ===== FALL OUT =====
             if (player.Top > Height)
             {
                 Die();
                 return;
             }
 
-            // ===== WIN =====
             if (player.Bounds.IntersectsWith(goal.Bounds))
             {
-                gameTimer.Stop();
-                hazardTimer.Stop();
-
-                SoundManager.StopBackground();
-                SoundManager.PlayEffect("win.wav");
-
-                MessageBox.Show($"You won.\nDeaths: {deathCount}", "Finally.");
-                Close();
+                GoToLevel2();
+                return;
             }
         }
-        // ================= DIE =================
+
+        void GoToLevel2()
+        {
+            gameTimer.Stop();
+            hazardTimer.Stop();
+            SoundManager.StopBackground();
+
+            var lv2 = new UnfairGameLv2();
+            lv2.Show();
+
+            this.Close();
+        }
+
         void Die()
         {
             deathCount++;
@@ -345,7 +369,6 @@ namespace MainMenu
             randomFakeGrounds.Clear();
 
             SpawnRandomFakeGrounds();
-
             player.Location = new Point(80, 420 + MAP_OFFSET_Y);
 
             foreach (var h in hazards)
@@ -359,7 +382,30 @@ namespace MainMenu
             hazardTimer.Start();
         }
 
-        // ================= ADD =================
+        protected override void OnKeyDown(KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.A) left = true;
+            if (e.KeyCode == Keys.D) right = true;
+
+            if (e.KeyCode == Keys.Enter && !jumping)
+            {
+                vy = jumpPower;
+                jumping = true;
+                SoundManager.PlayEffect("jump.wav");
+            }
+
+            if (e.KeyCode == Keys.Escape)
+            {
+                EndGame(false);
+            }
+        }
+
+        protected override void OnKeyUp(KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.A) left = false;
+            if (e.KeyCode == Keys.D) right = false;
+        }
+
         void AddRealGround(int x, int y, int w = 180)
         {
             var g = new PictureBox
@@ -398,26 +444,9 @@ namespace MainMenu
             Controls.Add(b);
         }
 
-        // ================= INPUT =================
-        protected override void OnKeyDown(KeyEventArgs e)
+        private void UnfairGame_Load(object sender, EventArgs e)
         {
-            if (e.KeyCode == Keys.A) left = true;
-            if (e.KeyCode == Keys.D) right = true;
 
-            if (e.KeyCode == Keys.Enter && !jumping)
-            {
-                vy = jumpPower;
-                jumping = true;
-                SoundManager.PlayEffect("jump.wav");
-            }
-
-            if (e.KeyCode == Keys.Escape) Close();
-        }
-
-        protected override void OnKeyUp(KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.A) left = false;
-            if (e.KeyCode == Keys.D) right = false;
         }
     }
 }

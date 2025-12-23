@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|d:\\nguyenphuocgiabin_2123110115\\mainmenu\\mainmenu\\unfairgame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|solutionrelative:mainmenu\\unfairgame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|d:\\nguyenphuocgiabin_2123110115\\mainmenu\\mainmenu\\unfairgamelv2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|solutionrelative:mainmenu\\unfairgamelv2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\mainmenu\\unfairgamelv2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|solutionrelative:mainmenu\\unfairgamelv2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|d:\\nguyenphuocgiabin_2123110115\\mainmenu\\mainmenu\\unfairgamelv2.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|solutionrelative:mainmenu\\unfairgamelv2.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|d:\\nguyenphuocgiabin_2123110115\\mainmenu\\mainmenu\\soundmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|solutionrelative:mainmenu\\soundmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|d:\\nguyenphuocgiabin_2123110115\\mainmenu\\mainmenu\\unfairgame.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B38601D-3845-4637-B77E-D195B0CCB4AD}|MainMenu\\MainMenu.csproj|solutionrelative:mainmenu\\unfairgame.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -31,6 +35,43 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "UnfairGameLv2.cs [Design]",
+              "DocumentMoniker": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\UnfairGameLv2.cs",
+              "RelativeDocumentMoniker": "MainMenu\\UnfairGameLv2.cs",
+              "ToolTip": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\UnfairGameLv2.cs [Design]",
+              "RelativeToolTip": "MainMenu\\UnfairGameLv2.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-22T12:18:24.184Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UnfairGameLv2.cs",
+              "DocumentMoniker": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\UnfairGameLv2.cs",
+              "RelativeDocumentMoniker": "MainMenu\\UnfairGameLv2.cs",
+              "ToolTip": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\UnfairGameLv2.cs",
+              "RelativeToolTip": "MainMenu\\UnfairGameLv2.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAAwC0AAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-21T23:45:32.374Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UnfairGameLv2.Designer.cs",
+              "DocumentMoniker": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\UnfairGameLv2.Designer.cs",
+              "RelativeDocumentMoniker": "MainMenu\\UnfairGameLv2.Designer.cs",
+              "ToolTip": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\UnfairGameLv2.Designer.cs",
+              "RelativeToolTip": "MainMenu\\UnfairGameLv2.Designer.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAADwvxUAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-21T23:59:01.903Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "SoundManager.cs",
               "DocumentMoniker": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\SoundManager.cs",
               "RelativeDocumentMoniker": "MainMenu\\SoundManager.cs",
@@ -38,34 +79,7 @@
               "RelativeToolTip": "MainMenu\\SoundManager.cs",
               "ViewState": "AgIAADsAAAAAAAAAAAAkwFAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-19T12:44:59.229Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UnfairGame.Designer.cs",
-              "DocumentMoniker": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\UnfairGame.Designer.cs",
-              "RelativeDocumentMoniker": "MainMenu\\UnfairGame.Designer.cs",
-              "ToolTip": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\UnfairGame.Designer.cs",
-              "RelativeToolTip": "MainMenu\\UnfairGame.Designer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-19T06:52:10.637Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UnfairGame.cs",
-              "DocumentMoniker": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\UnfairGame.cs",
-              "RelativeDocumentMoniker": "MainMenu\\UnfairGame.cs",
-              "ToolTip": "D:\\NguyenPhuocGiaBin_2123110115\\MainMenu\\MainMenu\\UnfairGame.cs",
-              "RelativeToolTip": "MainMenu\\UnfairGame.cs",
-              "ViewState": "AgIAAKcBAAAAAAAAAAAAAKcBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-19T06:50:42.287Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-19T12:44:59.229Z"
             }
           ]
         }

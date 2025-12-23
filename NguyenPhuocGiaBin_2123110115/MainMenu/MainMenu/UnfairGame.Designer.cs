@@ -21,23 +21,21 @@ namespace MainMenu
 
         private void InitializeComponent()
         {
-            this.components = new Container();
-            this.SuspendLayout();
-
+            SuspendLayout();
             // 
             // UnfairGame
             // 
-            this.AutoScaleMode = AutoScaleMode.None;
-            this.BackColor = Color.Black;
-            this.ClientSize = new Size(1280, 720);
-            this.FormBorderStyle = FormBorderStyle.None;
-            this.KeyPreview = true;
-            this.DoubleBuffered = true;
-            this.Name = "UnfairGame";
-            this.StartPosition = FormStartPosition.CenterScreen;
-            this.Text = "Almost There";
-
-            this.ResumeLayout(false);
+            AutoScaleMode = AutoScaleMode.None;
+            BackColor = Color.Black;
+            ClientSize = new Size(1280, 720);
+            DoubleBuffered = true;
+            FormBorderStyle = FormBorderStyle.None;
+            KeyPreview = true;
+            Name = "UnfairGame";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Almost There";
+            Load += UnfairGame_Load;
+            ResumeLayout(false);
         }
 
         #endregion

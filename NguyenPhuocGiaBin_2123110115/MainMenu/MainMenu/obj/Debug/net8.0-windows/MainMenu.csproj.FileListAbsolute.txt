@@ -63,3 +63,4 @@ D:\NguyenPhuocGiaBin_2123110115\MainMenu\MainMenu\bin\Debug\net8.0-windows\NAudi
 D:\NguyenPhuocGiaBin_2123110115\MainMenu\MainMenu\bin\Debug\net8.0-windows\NAudio.WinForms.dll
 D:\NguyenPhuocGiaBin_2123110115\MainMenu\MainMenu\bin\Debug\net8.0-windows\NAudio.WinMM.dll
 D:\NguyenPhuocGiaBin_2123110115\MainMenu\MainMenu\obj\Debug\net8.0-windows\MainMenu.csproj.Up2Date
+D:\NguyenPhuocGiaBin_2123110115\MainMenu\MainMenu\obj\Debug\net8.0-windows\MainMenu.UnfairGameLv2.resources

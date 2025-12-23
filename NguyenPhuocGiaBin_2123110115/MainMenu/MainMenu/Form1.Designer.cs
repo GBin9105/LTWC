@@ -79,13 +79,12 @@ namespace MainMenu
             ConfigureItem(bai7UnfairGameToolStripMenuItem, "😈  Bài 7 - Unfair Game");
 
             // ================= TITLE =================
-            lblTitle.Text = "GAME COLLECTION";
+            lblTitle.Text = "Bin's Game";
             lblTitle.Font = new Font("Segoe UI", 36F, FontStyle.Bold);
             lblTitle.ForeColor = Color.FromArgb(40, 40, 40);
             lblTitle.AutoSize = true;
             lblTitle.Location = new Point(60, 140);
 
-            lblSubTitle.Text = "Chọn trò chơi trong menu để bắt đầu";
             lblSubTitle.Font = new Font("Segoe UI", 16F);
             lblSubTitle.ForeColor = Color.Gray;
             lblSubTitle.AutoSize = true;
