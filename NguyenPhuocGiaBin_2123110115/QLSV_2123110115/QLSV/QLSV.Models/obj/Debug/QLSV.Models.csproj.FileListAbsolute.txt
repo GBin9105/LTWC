@@ -1,0 +1,6 @@
+D:\QLSV_2123110115\QLSV\QLSV.Models\bin\Debug\QLSV.Models.dll
+D:\QLSV_2123110115\QLSV\QLSV.Models\bin\Debug\QLSV.Models.pdb
+D:\QLSV_2123110115\QLSV\QLSV.Models\obj\Debug\QLSV.Models.csproj.AssemblyReference.cache
+D:\QLSV_2123110115\QLSV\QLSV.Models\obj\Debug\QLSV.Models.csproj.CoreCompileInputs.cache
+D:\QLSV_2123110115\QLSV\QLSV.Models\obj\Debug\QLSV.Models.dll
+D:\QLSV_2123110115\QLSV\QLSV.Models\obj\Debug\QLSV.Models.pdb
