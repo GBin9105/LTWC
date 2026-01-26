@@ -33,6 +33,12 @@
 
         private System.Windows.Forms.DataGridView dgvStudents;
 
+        // Header user + avatar + logout + change avatar
+        private System.Windows.Forms.PictureBox picUserAvatar;
+        private System.Windows.Forms.Label lblUserInfo;
+        private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Button btnChangeAvatar;
+
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -64,6 +70,10 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
+            this.picUserAvatar = new System.Windows.Forms.PictureBox();
+            this.lblUserInfo = new System.Windows.Forms.Label();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.btnChangeAvatar = new System.Windows.Forms.Button();
             this.grpSearch = new System.Windows.Forms.GroupBox();
             this.lblSearch = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
@@ -71,6 +81,7 @@
             this.btnReload = new System.Windows.Forms.Button();
             this.dgvStudents = new System.Windows.Forms.DataGridView();
             this.grpStudent.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picUserAvatar)).BeginInit();
             this.grpSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).BeginInit();
             this.SuspendLayout();
@@ -96,6 +107,9 @@
             this.grpStudent.Controls.Add(this.btnUpdate);
             this.grpStudent.Controls.Add(this.btnDelete);
             this.grpStudent.Controls.Add(this.btnClear);
+            this.grpStudent.Controls.Add(this.picUserAvatar);
+            this.grpStudent.Controls.Add(this.lblUserInfo);
+            this.grpStudent.Controls.Add(this.btnChangeAvatar);
             this.grpStudent.Location = new System.Drawing.Point(15, 16);
             this.grpStudent.Margin = new System.Windows.Forms.Padding(4);
             this.grpStudent.Name = "grpStudent";
@@ -195,6 +209,7 @@
             // 
             this.txtPhone.Location = new System.Drawing.Point(141, 120);
             this.txtPhone.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPhone.MaxLength = 10;
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(307, 26);
             this.txtPhone.TabIndex = 9;
@@ -211,10 +226,12 @@
             // 
             // txtAddress
             // 
+            this.txtAddress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtAddress.Location = new System.Drawing.Point(604, 120);
             this.txtAddress.Margin = new System.Windows.Forms.Padding(4);
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(606, 26);
+            this.txtAddress.Size = new System.Drawing.Size(307, 26);
             this.txtAddress.TabIndex = 11;
             // 
             // chkActive
@@ -274,6 +291,53 @@
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
+            // picUserAvatar
+            // 
+            this.picUserAvatar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picUserAvatar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picUserAvatar.Location = new System.Drawing.Point(1040, 35);
+            this.picUserAvatar.Margin = new System.Windows.Forms.Padding(4);
+            this.picUserAvatar.Name = "picUserAvatar";
+            this.picUserAvatar.Size = new System.Drawing.Size(70, 70);
+            this.picUserAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picUserAvatar.TabIndex = 200;
+            this.picUserAvatar.TabStop = false;
+            // 
+            // lblUserInfo
+            // 
+            this.lblUserInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblUserInfo.AutoSize = true;
+            this.lblUserInfo.Location = new System.Drawing.Point(1118, 35);
+            this.lblUserInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUserInfo.Name = "lblUserInfo";
+            this.lblUserInfo.Size = new System.Drawing.Size(80, 20);
+            this.lblUserInfo.TabIndex = 201;
+            this.lblUserInfo.Text = "User/Role";
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLogout.Location = new System.Drawing.Point(1080, 29);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(118, 32);
+            this.btnLogout.TabIndex = 202;
+            this.btnLogout.Text = "Đăng xuất";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
+            // btnChangeAvatar
+            // 
+            this.btnChangeAvatar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnChangeAvatar.Location = new System.Drawing.Point(1030, 125);
+            this.btnChangeAvatar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnChangeAvatar.Name = "btnChangeAvatar";
+            this.btnChangeAvatar.Size = new System.Drawing.Size(90, 32);
+            this.btnChangeAvatar.TabIndex = 203;
+            this.btnChangeAvatar.Text = "Đổi ảnh";
+            this.btnChangeAvatar.UseVisualStyleBackColor = true;
+            this.btnChangeAvatar.Click += new System.EventHandler(this.btnChangeAvatar_Click);
+            // 
             // grpSearch
             // 
             this.grpSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -282,6 +346,7 @@
             this.grpSearch.Controls.Add(this.txtSearch);
             this.grpSearch.Controls.Add(this.btnSearch);
             this.grpSearch.Controls.Add(this.btnReload);
+            this.grpSearch.Controls.Add(this.btnLogout);
             this.grpSearch.Location = new System.Drawing.Point(15, 277);
             this.grpSearch.Margin = new System.Windows.Forms.Padding(4);
             this.grpSearch.Name = "grpSearch";
@@ -303,6 +368,8 @@
             // 
             // txtSearch
             // 
+            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSearch.Location = new System.Drawing.Point(141, 29);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearch.Name = "txtSearch";
@@ -365,6 +432,7 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.grpStudent.ResumeLayout(false);
             this.grpStudent.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picUserAvatar)).EndInit();
             this.grpSearch.ResumeLayout(false);
             this.grpSearch.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).EndInit();

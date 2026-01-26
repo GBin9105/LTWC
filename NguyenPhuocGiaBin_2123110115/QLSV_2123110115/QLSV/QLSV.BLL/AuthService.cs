@@ -13,9 +13,6 @@ namespace QLSV.BLL
             _repo = new UserRepository();
         }
 
-        /// <summary>
-        /// Đăng nhập: trả về User nếu đúng, null nếu sai.
-        /// </summary>
         public User Login(string username, string password)
         {
             username = (username ?? "").Trim();
@@ -36,15 +33,12 @@ namespace QLSV.BLL
                 Id = row.Value.id,
                 Username = row.Value.username,
                 Role = row.Value.role,
-                IsActive = row.Value.active
+                IsActive = row.Value.active,
+                AvatarPath = row.Value.avatarPath
             };
         }
 
-        /// <summary>
-        /// Tạo user mới (hash mật khẩu rồi insert).
-        /// Lưu ý: username là UNIQUE trong DB, trùng sẽ throw exception.
-        /// </summary>
-        public void CreateUser(string username, string password, string role = "ADMIN")
+        public void CreateUser(string username, string password, string role = "ADMIN", string avatarPath = null)
         {
             username = (username ?? "").Trim();
             password = password ?? "";
@@ -54,11 +48,30 @@ namespace QLSV.BLL
             if (password.Length == 0) throw new Exception("Password không được trống.");
             if (role.Length == 0) role = "USER";
 
+            if (_repo.ExistsUsername(username))
+                throw new Exception("Username đã tồn tại.");
+
             var hash = BCrypt.Net.BCrypt.HashPassword(password);
 
-            // Có thể kiểm tra tồn tại trước, nhưng để đơn giản cứ insert.
-            // Nếu trùng username, DB sẽ báo lỗi duplicate key.
-            _repo.InsertUser(username, hash, role);
+            if (!string.IsNullOrWhiteSpace(avatarPath))
+                _repo.InsertUser(username, hash, role, avatarPath);
+            else
+                _repo.InsertUser(username, hash, role);
+        }
+
+        public void RegisterStudent(string username, string password, string avatarPath = null)
+        {
+            CreateUser(username, password, "STUDENT", avatarPath);
+        }
+
+        // ===== CẦN THÊM: UpdateAvatar =====
+        public void UpdateAvatar(int userId, string avatarPath)
+        {
+            if (userId <= 0) throw new Exception("UserId không hợp lệ.");
+
+            avatarPath = string.IsNullOrWhiteSpace(avatarPath) ? null : avatarPath.Trim();
+
+            _repo.UpdateAvatar(userId, avatarPath);
         }
     }
 }

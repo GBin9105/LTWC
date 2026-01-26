@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 using QLSV.BLL;
 using QLSV.Models;
@@ -8,22 +10,35 @@ namespace QLSV
     public partial class MainForm : Form
     {
         private readonly StudentService _studentService = new StudentService();
+        private readonly AuthService _authService = new AuthService();
+
         private int _selectedId = 0;
         private readonly User _currentUser;
+
+        private bool _isLoggingOut = false;
 
         public MainForm(User u)
         {
             InitializeComponent();
             _currentUser = u;
 
-            // Đảm bảo đóng form là thoát hẳn app (tránh lock DLL khi rebuild)
-            this.FormClosed += (s, e) => Application.Exit();
+            // Nếu user bấm X => thoát app
+            // Nếu logout => không thoát app (vì quay lại LoginForm)
+            this.FormClosed += MainForm_FormClosed;
+        }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (!_isLoggingOut)
+                Application.Exit();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            // (Tuỳ chọn) Hiển thị user đăng nhập trên title
             this.Text = $"Quản lý sinh viên - {_currentUser.Username} ({_currentUser.Role})";
+
+            // Header user + avatar
+            ShowCurrentUserHeader();
 
             // Combo giới tính
             cboGender.Items.Clear();
@@ -36,20 +51,40 @@ namespace QLSV
             dtpDob.ShowCheckBox = true;
             dtpDob.Checked = false;
 
+            // Nếu là STUDENT thì không cho CRUD
+            ApplyRolePermission();
+
             // Load danh sách
             LoadStudents();
+        }
 
-            // QUAN TRỌNG:
-            // Nếu bạn đã gắn event SelectionChanged trong Designer rồi, KHÔNG gắn lại ở đây.
-            // Nếu Designer chưa gắn, bạn có thể mở dòng dưới:
-            // dgvStudents.SelectionChanged += dgvStudents_SelectionChanged;
+        private void ApplyRolePermission()
+        {
+            bool isStudent = string.Equals((_currentUser.Role ?? "").Trim(), "STUDENT", StringComparison.OrdinalIgnoreCase);
+
+            if (isStudent)
+            {
+                // Không cho thao tác CRUD
+                btnAdd.Enabled = false;
+                btnUpdate.Enabled = false;
+                btnDelete.Enabled = false;
+
+                // Không cho sửa các ô nhập
+                txtCode.ReadOnly = true;
+                txtName.ReadOnly = true;
+                txtPhone.ReadOnly = true;
+                txtAddress.ReadOnly = true;
+                cboGender.Enabled = false;
+                dtpDob.Enabled = false;
+                chkActive.Enabled = false;
+            }
         }
 
         private void LoadStudents()
         {
             try
             {
-                dgvStudents.AutoGenerateColumns = true; // nhanh nhất
+                dgvStudents.AutoGenerateColumns = true;
                 dgvStudents.DataSource = _studentService.GetAll();
                 dgvStudents.ClearSelection();
                 _selectedId = 0;
@@ -96,6 +131,8 @@ namespace QLSV
         {
             try
             {
+                if (IsStudentBlocked()) return;
+
                 var s = ReadForm();
                 _studentService.Add(s);
 
@@ -113,6 +150,8 @@ namespace QLSV
         {
             try
             {
+                if (IsStudentBlocked()) return;
+
                 if (_selectedId <= 0)
                 {
                     MessageBox.Show("Bạn chưa chọn sinh viên để sửa.");
@@ -136,6 +175,8 @@ namespace QLSV
         {
             try
             {
+                if (IsStudentBlocked()) return;
+
                 if (_selectedId <= 0)
                 {
                     MessageBox.Show("Bạn chưa chọn sinh viên để xóa.");
@@ -182,6 +223,17 @@ namespace QLSV
             ClearForm();
         }
 
+        private bool IsStudentBlocked()
+        {
+            bool isStudent = string.Equals((_currentUser.Role ?? "").Trim(), "STUDENT", StringComparison.OrdinalIgnoreCase);
+            if (isStudent)
+            {
+                MessageBox.Show("Tài khoản sinh viên không có quyền Thêm/Sửa/Xóa.");
+                return true;
+            }
+            return false;
+        }
+
         private Student ReadForm()
         {
             return new Student
@@ -215,7 +267,128 @@ namespace QLSV
 
         private void grpStudent_Enter(object sender, EventArgs e)
         {
+        }
 
+        // ===== USER HEADER + AVATAR =====
+
+        private void ShowCurrentUserHeader()
+        {
+            lblUserInfo.Text = $"{_currentUser.Username}\n{_currentUser.Role}";
+
+            // Lấy AvatarPath an toàn (nếu bạn đã có property AvatarPath thì vẫn ok)
+            string avatarPath = null;
+            try
+            {
+                var prop = _currentUser.GetType().GetProperty("AvatarPath");
+                if (prop != null)
+                    avatarPath = prop.GetValue(_currentUser) as string;
+            }
+            catch
+            {
+                avatarPath = null;
+            }
+
+            try
+            {
+                // tránh lock file: Dispose ảnh cũ trước
+                if (picUserAvatar.Image != null)
+                {
+                    var old = picUserAvatar.Image;
+                    picUserAvatar.Image = null;
+                    old.Dispose();
+                }
+
+                if (!string.IsNullOrWhiteSpace(avatarPath))
+                {
+                    string fullPath = Path.Combine(Application.StartupPath, avatarPath);
+                    if (File.Exists(fullPath))
+                    {
+                        picUserAvatar.Image = LoadImageNoLock(fullPath);
+                    }
+                }
+            }
+            catch
+            {
+                picUserAvatar.Image = null;
+            }
+        }
+
+        private Image LoadImageNoLock(string fullPath)
+        {
+            byte[] bytes = File.ReadAllBytes(fullPath);
+            using (var ms = new MemoryStream(bytes))
+            {
+                return Image.FromStream(ms);
+            }
+        }
+
+        // NEW: đổi avatar
+        private void btnChangeAvatar_Click(object sender, EventArgs e)
+        {
+            using (var ofd = new OpenFileDialog())
+            {
+                ofd.Title = "Chọn ảnh đại diện";
+                ofd.Filter = "Image files|*.jpg;*.jpeg;*.png;*.bmp|All files|*.*";
+                ofd.Multiselect = false;
+
+                if (ofd.ShowDialog() != DialogResult.OK) return;
+
+                try
+                {
+                    // copy ảnh vào thư mục avatars cạnh exe
+                    string avatarsDir = Path.Combine(Application.StartupPath, "avatars");
+                    if (!Directory.Exists(avatarsDir))
+                        Directory.CreateDirectory(avatarsDir);
+
+                    string ext = Path.GetExtension(ofd.FileName);
+                    string fileName = Guid.NewGuid().ToString("N") + ext;
+                    string destFullPath = Path.Combine(avatarsDir, fileName);
+
+                    File.Copy(ofd.FileName, destFullPath, true);
+
+                    // lưu đường dẫn tương đối vào DB
+                    string relativePath = Path.Combine("avatars", fileName);
+
+                    // BẮT BUỘC: AuthService phải có UpdateAvatar(userId, avatarPath)
+                    _authService.UpdateAvatar(_currentUser.Id, relativePath);
+
+                    // update user in-memory (nếu có property AvatarPath)
+                    try
+                    {
+                        var prop = _currentUser.GetType().GetProperty("AvatarPath");
+                        if (prop != null && prop.CanWrite)
+                            prop.SetValue(_currentUser, relativePath);
+                    }
+                    catch { }
+
+                    // refresh UI
+                    ShowCurrentUserHeader();
+                    MessageBox.Show("Đổi avatar thành công.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi đổi avatar: " + ex.Message);
+                }
+            }
+        }
+
+        // ===== LOGOUT =====
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            _isLoggingOut = true;
+
+            // Hiện lại LoginForm đang bị Hide (Application.Run chạy bằng LoginForm)
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f is LoginForm)
+                {
+                    f.Show();
+                    f.BringToFront();
+                    break;
+                }
+            }
+
+            this.Close();
         }
     }
 }
